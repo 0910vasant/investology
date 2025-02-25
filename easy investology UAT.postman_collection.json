@@ -1,0 +1,5299 @@
+{
+	"info": {
+		"_postman_id": "07e8badf-bba3-41af-aec0-477e696ab3b5",
+		"name": "easy investology UAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34216357"
+	},
+	"item": [
+		{
+			"name": "mfu",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/MfUtilityApiLogin.do?sendResponseFormat=JSON&loginid=EASYINVUAT&password=T7BO43drYUA0WrCASXo75g==&entityId=40007K&logTp=A&versionNo=1.00",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"MfUtilityApiLogin.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "loginid",
+									"value": "EASYINVUAT"
+								},
+								{
+									"key": "password",
+									"value": "T7BO43drYUA0WrCASXo75g=="
+								},
+								{
+									"key": "entityId",
+									"value": "40007K"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "versionNo",
+									"value": "1.00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/Logout.do?isJsonResponseFormatReqd=Y&loginid=40304FO8sessioncontext=40304FO8852A5946D1&sendersubid=40304FO8&onbehalfid=40304FO8\n",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"Logout.do"
+							],
+							"query": [
+								{
+									"key": "isJsonResponseFormatReqd",
+									"value": "Y"
+								},
+								{
+									"key": "loginid",
+									"value": "40304FO8sessioncontext=40304FO8852A5946D1"
+								},
+								{
+									"key": "sendersubid",
+									"value": "40304FO8"
+								},
+								{
+									"key": "onbehalfid",
+									"value": "40304FO8\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "can creation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<CANIndFillEezzReq xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"CANIndFillEezzReq.xsd\">\r\n    <REQ_HEADER>\r\n      <ENTITY_ID>40007K</ENTITY_ID>\r\n      <UNIQUE_ID>2</UNIQUE_ID>\r\n      <REQUEST_TYPE>CANINDREG</REQUEST_TYPE>\r\n      <LOG_USER_ID>EASYINVUAT</LOG_USER_ID>\r\n      <EN_ENCR_PASSWORD>T7BO43drYUA0WrCASXo75g==</EN_ENCR_PASSWORD>\r\n      <VERSION_NO>1.00</VERSION_NO>\r\n      <TIMESTAMP>2023-01-10T11:15:30</TIMESTAMP>\r\n    </REQ_HEADER>\r\n    <REQ_BODY>\r\n      <REQ_EVENT>CR</REQ_EVENT>\r\n      <!-- CR - CAN CREATION EVENT , CM  CAN Modification Event-->\r\n      <CAN></CAN>\r\n      <!--  Only for CAN Modification -->\r\n      <REG_TYPE>E</REG_TYPE>\r\n      <!--  Physical,Electronic (P,E) -->\r\n      <PROOF_UPLOAD_BY_CAN>N</PROOF_UPLOAD_BY_CAN>\r\n      <!--  Y-YES ,N - NO -->\r\n      <ENABLE_ONLINE_ACCESS_FLAG>Y</ENABLE_ONLINE_ACCESS_FLAG>\r\n      <!--  Y-YES ,N - NO -->\r\n      <ENTITY_EMAIL_DETAILS>\r\n          <EMAIL_ID>meena@gmail.com</EMAIL_ID>\r\n          <EMAIL_ID></EMAIL_ID>\r\n      </ENTITY_EMAIL_DETAILS>\r\n      <HOLDING_TYPE>AS</HOLDING_TYPE>\r\n      <INV_CATEGORY>I</INV_CATEGORY>\r\n      <TAX_STATUS>RI</TAX_STATUS>\r\n      <HOLDER_COUNT>1</HOLDER_COUNT>\r\n      <HOLDER_RECORDS>\r\n        <HOLDER_RECORD>\r\n          <HOLDER_TYPE>PR</HOLDER_TYPE>\r\n            <!-- PR,SE,TH,GU -->\r\n            <NAME>Meena</NAME>\r\n            <DOB>1995-06-13</DOB>\r\n            <PAN_EXEMPT_FLAG>N</PAN_EXEMPT_FLAG>\r\n            <PAN_PEKRN_NO>ESKPS8994H</PAN_PEKRN_NO>\r\n            <AADHAAR_NO></AADHAAR_NO>\r\n            <!-- As of version 5.5 of eCAN specification, this should be blank always. -->\r\n            <RELATIONSHIP></RELATIONSHIP>\r\n            <!-- Applicable only for Gaurdian Holder -->\r\n            <REL_PROOF></REL_PROOF>\r\n            <!-- Applicable only for Gaurdian Holder -->\r\n            <CONTACT_DETAIL>\r\n              <RES_ISD></RES_ISD>\r\n              <RES_STD></RES_STD>\r\n              <RES_PHONE_NO></RES_PHONE_NO>\r\n              <MOB_ISD_CODE></MOB_ISD_CODE>\r\n              <PRI_MOB_NO>8928504071</PRI_MOB_NO>\r\n              \r\n              <!--  S-SELF,F-FAMILY -->\r\n              <ALT_MOB_NO></ALT_MOB_NO>\r\n              <OFF_ISD></OFF_ISD>\r\n              <OFF_STD></OFF_STD>\r\n              <OFF_PHONE_NO></OFF_PHONE_NO>\r\n              <PRI_EMAIL>adinath@gmail.com</PRI_EMAIL>\r\n              \r\n              <!--  S-SELF,F-FAMILY -->\r\n              <ALT_EMAIL></ALT_EMAIL>\r\n            </CONTACT_DETAIL>\r\n            <OTHER_DETAIL>\r\n              <GROSS_INCOME></GROSS_INCOME>\r\n              <NET_WORTH></NET_WORTH>\r\n              <NET_DATE></NET_DATE>\r\n              <SOURCE_OF_WEALTH></SOURCE_OF_WEALTH>\r\n              <SOURCE_OF_WEALTH_OTH></SOURCE_OF_WEALTH_OTH>\r\n              <KRA_ADDR_TYPE>3</KRA_ADDR_TYPE>\r\n              <OCCUPATION>02</OCCUPATION>\r\n              <OCCUPATION_OTH></OCCUPATION_OTH>\r\n              <PEP>NA</PEP>\r\n              <ANY_OTH_INFO></ANY_OTH_INFO>\r\n            </OTHER_DETAIL>\r\n            <FATCA_DETAIL>\r\n              <BIRTH_CITY>Raigad</BIRTH_CITY>\r\n              <BIRTH_COUNTRY>101</BIRTH_COUNTRY>\r\n              <BIRTH_COUNTRY_OTH></BIRTH_COUNTRY_OTH>\r\n              <CITIZENSHIP>101</CITIZENSHIP>\r\n              <CITIZENSHIP_OTH></CITIZENSHIP_OTH>\r\n              <NATIONALITY>101</NATIONALITY>\r\n              <NATIONALITY_OTH></NATIONALITY_OTH>\r\n              <TAX_RES_FLAG>N</TAX_RES_FLAG>\r\n              <TAXS_RECORDS>\r\n                <!--Multiple Record-->\r\n                \r\n                []\r\n              </TAXS_RECORDS>\r\n            </FATCA_DETAIL>\r\n        </HOLDER_RECORD>\r\n      </HOLDER_RECORDS>\r\n      <ARN_DETAILS>\r\n      <!--  RIA Code need to add -->\r\n      <ARN_NO></ARN_NO>\r\n      <RIA_CODE></RIA_CODE>\r\n      <!-- RIA Code -->\r\n      <EUIN_CODE></EUIN_CODE>\r\n      </ARN_DETAILS>\r\n      <BANK_DETAILS>\r\n      <!--Multiple Record-->\r\n        <BANK_RECORD>\r\n          <SEQ_NUM>1</SEQ_NUM>\r\n          <DEFAULT_ACC_FLAG>Y</DEFAULT_ACC_FLAG>\r\n          <ACCOUNT_NO>20027006821</ACCOUNT_NO>\r\n          <ACCOUNT_TYPE>SB</ACCOUNT_TYPE>\r\n          <BANK_ID>065</BANK_ID>\r\n          <MICR_CODE>708</MICR_CODE>\r\n          <IFSC_CODE>SBIN0006821</IFSC_CODE>\r\n          <PROOF>77</PROOF>\r\n        </BANK_RECORD>\r\n                <BANK_RECORD>\r\n          <SEQ_NUM>2</SEQ_NUM>\r\n          <DEFAULT_ACC_FLAG>N</DEFAULT_ACC_FLAG>\r\n          <ACCOUNT_NO>2099390078</ACCOUNT_NO>\r\n          <ACCOUNT_TYPE>SNRA</ACCOUNT_TYPE>\r\n          <BANK_ID>065</BANK_ID>\r\n          <MICR_CODE>7006</MICR_CODE>\r\n          <IFSC_CODE>SNGR0098</IFSC_CODE>\r\n          <PROOF>14</PROOF>\r\n        </BANK_RECORD>\r\n                <BANK_RECORD>\r\n          <SEQ_NUM>3</SEQ_NUM>\r\n          <DEFAULT_ACC_FLAG>N</DEFAULT_ACC_FLAG>\r\n          <ACCOUNT_NO>0988766555</ACCOUNT_NO>\r\n          <ACCOUNT_TYPE>SB</ACCOUNT_TYPE>\r\n          <BANK_ID>065</BANK_ID>\r\n          <MICR_CODE>7654</MICR_CODE>\r\n          <IFSC_CODE>HHGT66655</IFSC_CODE>\r\n          <PROOF>15</PROOF>\r\n        </BANK_RECORD>\r\n      </BANK_DETAILS>\r\n      <NOMINEE_DETAILS>\r\n        <NOM_DECL_LVL>C</NOM_DECL_LVL>\r\n        <NOMIN_OPT_FLAG>N</NOMIN_OPT_FLAG>\r\n        <NOM_VERIFY_TYPE>E</NOM_VERIFY_TYPE>\r\n        <NOMINEES_RECORDS>\r\n          \r\n        </NOMINEES_RECORDS>\r\n      </NOMINEE_DETAILS>\r\n    </REQ_BODY>\r\n  </CANIndFillEezzReq>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://14.141.212.169:4091/MFUCanFillEezzService",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"MFUCanFillEezzService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "can validation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APICANValidationService.do?sendResponseFormat=JSON&logTp=A&entityId=40007K&can=30023KM001&pan=ADXPW8350K&dob=1998-06-25&emailId=test@xyz.com&sendersubid=22347400001&sessioncontext=2234740000111F4C48",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APICANValidationService.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "entityId",
+									"value": "40007K"
+								},
+								{
+									"key": "can",
+									"value": "30023KM001"
+								},
+								{
+									"key": "pan",
+									"value": "ADXPW8350K"
+								},
+								{
+									"key": "dob",
+									"value": "1998-06-25"
+								},
+								{
+									"key": "emailId",
+									"value": "test@xyz.com"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "2234740000111F4C48"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "can image upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "param1",
+									"value": "EASYINVUAT",
+									"type": "text"
+								},
+								{
+									"key": "param2",
+									"value": "T7BO43drYUA0WrCASXo75g==",
+									"type": "text"
+								},
+								{
+									"key": "param3",
+									"value": "40007K",
+									"type": "text"
+								},
+								{
+									"key": "param4",
+									"value": "ECAN",
+									"type": "text"
+								},
+								{
+									"key": "param5",
+									"value": "AD",
+									"type": "text"
+								},
+								{
+									"key": "param6",
+									"value": "30023KM001",
+									"type": "text"
+								},
+								{
+									"key": "param7",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "param8",
+									"value": "1#PC",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/H:/Dynamic-Vishva/mfu docs/new/pan_images/nayan_pan1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://14.141.212.169:4091/MFUImageServerUpload",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"MFUImageServerUpload"
+							],
+							"query": [
+								{
+									"key": "param1",
+									"value": "EASYINVUAT",
+									"disabled": true
+								},
+								{
+									"key": "param2",
+									"value": "T7BO43drYUA0WrCASXo75g==",
+									"disabled": true
+								},
+								{
+									"key": "param3",
+									"value": "40007K",
+									"disabled": true
+								},
+								{
+									"key": "param4",
+									"value": "ECAN",
+									"disabled": true
+								},
+								{
+									"key": "param5",
+									"value": "AD",
+									"disabled": true
+								},
+								{
+									"key": "param6",
+									"value": "30023KM001",
+									"disabled": true
+								},
+								{
+									"key": "param7",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "param8",
+									"value": "1%23PC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payEezz registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APIePayEezzService.do?sendResponseFormat=JSON&sessioncontext=2234740000145B432E&sendersubid=22347400001&logTp=A&regMode=PN&entityId=40007K&reqType=A&can=14163BEA01&riaNo=&arnNo=ARN-5001&subBrokArn=&subBrokCode=&euincode=&accNo=123456&accType=SB&bankId=240&ifscCode=HDFC0001220&micrCode=110240140&bankName=HDFC BANK LTD&maxAmt=1000&perpetualFlag=Y&startDate=2024-01-28&endDate=",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APIePayEezzService.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "2234740000145B432E"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "regMode",
+									"value": "PN"
+								},
+								{
+									"key": "entityId",
+									"value": "40007K"
+								},
+								{
+									"key": "reqType",
+									"value": "A"
+								},
+								{
+									"key": "can",
+									"value": "14163BEA01"
+								},
+								{
+									"key": "riaNo",
+									"value": ""
+								},
+								{
+									"key": "arnNo",
+									"value": "ARN-5001"
+								},
+								{
+									"key": "subBrokArn",
+									"value": ""
+								},
+								{
+									"key": "subBrokCode",
+									"value": ""
+								},
+								{
+									"key": "euincode",
+									"value": ""
+								},
+								{
+									"key": "accNo",
+									"value": "123456"
+								},
+								{
+									"key": "accType",
+									"value": "SB"
+								},
+								{
+									"key": "bankId",
+									"value": "240"
+								},
+								{
+									"key": "ifscCode",
+									"value": "HDFC0001220"
+								},
+								{
+									"key": "micrCode",
+									"value": "110240140"
+								},
+								{
+									"key": "bankName",
+									"value": "HDFC BANK LTD"
+								},
+								{
+									"key": "maxAmt",
+									"value": "1000"
+								},
+								{
+									"key": "perpetualFlag",
+									"value": "Y"
+								},
+								{
+									"key": "startDate",
+									"value": "2024-01-28"
+								},
+								{
+									"key": "endDate",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Purchase lumsum",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://14.141.212.169:4091/PurchaseAndSIPTxnAction.do?sendResponseFormat=JSON&logTp=A&txnType=B&orderMode=Z&actionType=CHECK&arnCode=195775&arnType=&branchRMInternalCode=&can=14163AKA01&depositoryFlag=N&directFlag=N&dividendOption=N&dividendOption=N&dpType=&euincode=E032984&extUniqueRefId=SCHEMECODE1&folioAccNo=NEW&folioCheckDigit=&folioTxnFlag=N&instDate=2023-06-19&invDpAccNo=&logTp=A&noOfSchemes=2&orderMode=Z&pageForRole=INV&paymentAmount=10000.00&paymentFlag=Y&paymentRefNo=&payment_newVANFlag=Y&payment_VirtAccNo=MFSYES14163AKA01&payment_bankId=532&payment_ifscCode=YESB0000091&payment_instrumentType=NE&payment_invAccNo=54545&payment_invAccType=SB&payment_micrNo=171532002&recordNo=1&rtaAmcCode=135&rtaSchemeCode=AXD1D&sendersubid=22347400001&sessioncontext=2234740000101E3911&subBrkArnCode=&subBrkArnLabel=ARN-&subBrkArnType=&subBrokCode=&totalAmount=10000.00&txnEvent=Q&txnType=B&txnVolume=5000&txnVolumeType=A&euinDeclaration=N&tranSource=I",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"PurchaseAndSIPTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "txnType",
+									"value": "B"
+								},
+								{
+									"key": "orderMode",
+									"value": "Z"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "arnCode",
+									"value": "195775"
+								},
+								{
+									"key": "arnType",
+									"value": ""
+								},
+								{
+									"key": "branchRMInternalCode",
+									"value": ""
+								},
+								{
+									"key": "can",
+									"value": "14163AKA01"
+								},
+								{
+									"key": "depositoryFlag",
+									"value": "N"
+								},
+								{
+									"key": "directFlag",
+									"value": "N"
+								},
+								{
+									"key": "dividendOption",
+									"value": "N"
+								},
+								{
+									"key": "dividendOption",
+									"value": "N"
+								},
+								{
+									"key": "dpType",
+									"value": ""
+								},
+								{
+									"key": "euincode",
+									"value": "E032984"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "SCHEMECODE1"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "NEW"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "instDate",
+									"value": "2023-06-19"
+								},
+								{
+									"key": "invDpAccNo",
+									"value": ""
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "2"
+								},
+								{
+									"key": "orderMode",
+									"value": "Z"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "paymentAmount",
+									"value": "10000.00"
+								},
+								{
+									"key": "paymentFlag",
+									"value": "Y"
+								},
+								{
+									"key": "paymentRefNo",
+									"value": ""
+								},
+								{
+									"key": "payment_newVANFlag",
+									"value": "Y"
+								},
+								{
+									"key": "payment_VirtAccNo",
+									"value": "MFSYES14163AKA01"
+								},
+								{
+									"key": "payment_bankId",
+									"value": "532"
+								},
+								{
+									"key": "payment_ifscCode",
+									"value": "YESB0000091"
+								},
+								{
+									"key": "payment_instrumentType",
+									"value": "NE"
+								},
+								{
+									"key": "payment_invAccNo",
+									"value": "54545"
+								},
+								{
+									"key": "payment_invAccType",
+									"value": "SB"
+								},
+								{
+									"key": "payment_micrNo",
+									"value": "171532002"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "135"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "AXD1D"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "2234740000101E3911"
+								},
+								{
+									"key": "subBrkArnCode",
+									"value": ""
+								},
+								{
+									"key": "subBrkArnLabel",
+									"value": "ARN-"
+								},
+								{
+									"key": "subBrkArnType",
+									"value": ""
+								},
+								{
+									"key": "subBrokCode",
+									"value": ""
+								},
+								{
+									"key": "totalAmount",
+									"value": "10000.00"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "txnType",
+									"value": "B"
+								},
+								{
+									"key": "txnVolume",
+									"value": "5000"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A"
+								},
+								{
+									"key": "euinDeclaration",
+									"value": "N"
+								},
+								{
+									"key": "tranSource",
+									"value": "I"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lumpsum purchase new",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/PurchaseAndSIPTxnAction.do?sendResponseFormat=JSON&sessioncontext=2234740000145B432E&sendersubid=22347400001&logTp=A&versionNo=2.0&actionType=CHECK&txnType=B&orderMode=Z&tranSource=I&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=14157AZA01&jointHolderFlag=N&holderDetail=&directFlag=N&riaFlag=&riaCode=&arnType=&arnCode=195775&subBrkArnLabel=ARN-&subBrkArnType=&subBrkArnCode=&subBrokCode=&branchRMInternalCode=&euincode=&euinDeclaration=Y&depositoryFlag=N&dpType=&invDpAccNo=&paymentFlag=Y&payment_instrumentType=NE&payment_bankId=027&payment_invAccType=SB&payment_micrNo=123456789&payment_ifscCode=UTBI0BEC135&instDate=2024-01-20&payment_invAccNo=12345&payment_TxnDoneFlag=Y&paymentRefNo=TRIS00101&payment_newVANFlag=Y&payment_VirtAccNo=MFUYES14157AZA01&paymentAmount=1&totalAmount=1&extGroupRefNo=&noOfSchemes=1&recordNo=1&extUniqueRefId=123451&folioAccNo=NEW&folioCheckDigit=&rtaAmcCode=FTI&rtaSchemeCode=304&dividendOption=N&txnVolumeType=A&txnVolume=1",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"PurchaseAndSIPTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "2234740000145B432E"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "versionNo",
+									"value": "2.0"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "txnType",
+									"value": "B"
+								},
+								{
+									"key": "orderMode",
+									"value": "Z"
+								},
+								{
+									"key": "tranSource",
+									"value": "I"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "can",
+									"value": "14157AZA01"
+								},
+								{
+									"key": "jointHolderFlag",
+									"value": "N"
+								},
+								{
+									"key": "holderDetail",
+									"value": ""
+								},
+								{
+									"key": "directFlag",
+									"value": "N"
+								},
+								{
+									"key": "riaFlag",
+									"value": ""
+								},
+								{
+									"key": "riaCode",
+									"value": ""
+								},
+								{
+									"key": "arnType",
+									"value": ""
+								},
+								{
+									"key": "arnCode",
+									"value": "195775"
+								},
+								{
+									"key": "subBrkArnLabel",
+									"value": "ARN-"
+								},
+								{
+									"key": "subBrkArnType",
+									"value": ""
+								},
+								{
+									"key": "subBrkArnCode",
+									"value": ""
+								},
+								{
+									"key": "subBrokCode",
+									"value": ""
+								},
+								{
+									"key": "branchRMInternalCode",
+									"value": ""
+								},
+								{
+									"key": "euincode",
+									"value": ""
+								},
+								{
+									"key": "euinDeclaration",
+									"value": "Y"
+								},
+								{
+									"key": "depositoryFlag",
+									"value": "N"
+								},
+								{
+									"key": "dpType",
+									"value": ""
+								},
+								{
+									"key": "invDpAccNo",
+									"value": ""
+								},
+								{
+									"key": "paymentFlag",
+									"value": "Y"
+								},
+								{
+									"key": "payment_instrumentType",
+									"value": "NE"
+								},
+								{
+									"key": "payment_bankId",
+									"value": "027"
+								},
+								{
+									"key": "payment_invAccType",
+									"value": "SB"
+								},
+								{
+									"key": "payment_micrNo",
+									"value": "123456789"
+								},
+								{
+									"key": "payment_ifscCode",
+									"value": "UTBI0BEC135"
+								},
+								{
+									"key": "instDate",
+									"value": "2024-01-20"
+								},
+								{
+									"key": "payment_invAccNo",
+									"value": "12345"
+								},
+								{
+									"key": "payment_TxnDoneFlag",
+									"value": "Y"
+								},
+								{
+									"key": "paymentRefNo",
+									"value": "TRIS00101"
+								},
+								{
+									"key": "payment_newVANFlag",
+									"value": "Y"
+								},
+								{
+									"key": "payment_VirtAccNo",
+									"value": "MFUYES14157AZA01"
+								},
+								{
+									"key": "paymentAmount",
+									"value": "1"
+								},
+								{
+									"key": "totalAmount",
+									"value": "1"
+								},
+								{
+									"key": "extGroupRefNo",
+									"value": ""
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "1"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "NEW"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "304"
+								},
+								{
+									"key": "dividendOption",
+									"value": "N"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A"
+								},
+								{
+									"key": "txnVolume",
+									"value": "1"
+								},
+								{
+									"key": "recordNo",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451",
+									"disabled": true
+								},
+								{
+									"key": "folioAccNo",
+									"value": "NEW",
+									"disabled": true
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI",
+									"disabled": true
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "304",
+									"disabled": true
+								},
+								{
+									"key": "dividendOption",
+									"value": "N",
+									"disabled": true
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A",
+									"disabled": true
+								},
+								{
+									"key": "txnVolume",
+									"value": "20000",
+									"disabled": true
+								},
+								{
+									"key": "holdNat",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "taxStatus",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "priPanOrPekrn",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "secPanOrPekrn",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "thrPanOrPekrn",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "gurPanOrPekrn",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "lumpsum purchase new",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://14.141.212.169:4091/PurchaseAndSIPTxnAction.do?sendResponseFormat=JSON&sessioncontext=2234740000101E3911&sendersubid=22347400001&logTp=A&versionNo=2.0&actionType=CHECK&txnType=B&orderMode=Z&tranSource=I&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=14163AKA01&directFlag=N&arnType=&arnCode=195775&euinDeclaration=Y&depositoryFlag=N&paymentFlag=Y&payment_instrumentType=NE&payment_bankId=532&payment_invAccType=SB&payment_micrNo=171532002&payment_ifscCode=171532002&instDate=2023-06-22&payment_invAccNo=54545&payment_TxnDoneFlag=Y&paymentRefNo=&payment_newVANFlag=Y&payment_VirtAccNo=MFSYES14163AKA01&paymentAmount=10000.00&totalAmount=10000.00&noOfSchemes=2&recordNo=1&extUniqueRefId=&folioAccNo=NEW&folioCheckDigit=&rtaAmcCode=135&rtaSchemeCode=AXD1D&dividendOption=P&txnVolumeType=A&txnVolume=5000&recordNo=2&folioAccNo=NEW&folioCheckDigit=&rtaAmcCode=135&rtaSchemeCode=AXD1D&txnVolumeType=A&txnVolume=5000&extUniqueRefId=123451&dividendOption=P",
+									"protocol": "https",
+									"host": [
+										"14",
+										"141",
+										"212",
+										"169"
+									],
+									"port": "4091",
+									"path": [
+										"PurchaseAndSIPTxnAction.do"
+									],
+									"query": [
+										{
+											"key": "sendResponseFormat",
+											"value": "JSON"
+										},
+										{
+											"key": "sessioncontext",
+											"value": "2234740000101E3911"
+										},
+										{
+											"key": "sendersubid",
+											"value": "22347400001"
+										},
+										{
+											"key": "logTp",
+											"value": "A"
+										},
+										{
+											"key": "versionNo",
+											"value": "2.0"
+										},
+										{
+											"key": "actionType",
+											"value": "CHECK"
+										},
+										{
+											"key": "txnType",
+											"value": "B"
+										},
+										{
+											"key": "orderMode",
+											"value": "Z"
+										},
+										{
+											"key": "tranSource",
+											"value": "I"
+										},
+										{
+											"key": "folioTxnFlag",
+											"value": "N"
+										},
+										{
+											"key": "txnEvent",
+											"value": "Q"
+										},
+										{
+											"key": "pageForRole",
+											"value": "INV"
+										},
+										{
+											"key": "can",
+											"value": "14163AKA01"
+										},
+										{
+											"key": "directFlag",
+											"value": "N"
+										},
+										{
+											"key": "arnType",
+											"value": ""
+										},
+										{
+											"key": "arnCode",
+											"value": "195775"
+										},
+										{
+											"key": "euincode",
+											"value": "E032984",
+											"disabled": true
+										},
+										{
+											"key": "euinDeclaration",
+											"value": "Y"
+										},
+										{
+											"key": "depositoryFlag",
+											"value": "N"
+										},
+										{
+											"key": "paymentFlag",
+											"value": "Y"
+										},
+										{
+											"key": "payment_instrumentType",
+											"value": "NE"
+										},
+										{
+											"key": "payment_bankId",
+											"value": "532"
+										},
+										{
+											"key": "payment_invAccType",
+											"value": "SB"
+										},
+										{
+											"key": "payment_micrNo",
+											"value": "171532002"
+										},
+										{
+											"key": "payment_ifscCode",
+											"value": "171532002"
+										},
+										{
+											"key": "instDate",
+											"value": "2023-06-22"
+										},
+										{
+											"key": "payment_invAccNo",
+											"value": "54545"
+										},
+										{
+											"key": "payment_TxnDoneFlag",
+											"value": "Y"
+										},
+										{
+											"key": "paymentRefNo",
+											"value": ""
+										},
+										{
+											"key": "payment_newVANFlag",
+											"value": "Y"
+										},
+										{
+											"key": "payment_VirtAccNo",
+											"value": "MFSYES14163AKA01"
+										},
+										{
+											"key": "paymentAmount",
+											"value": "10000.00"
+										},
+										{
+											"key": "totalAmount",
+											"value": "10000.00"
+										},
+										{
+											"key": "noOfSchemes",
+											"value": "2"
+										},
+										{
+											"key": "recordNo",
+											"value": "1"
+										},
+										{
+											"key": "extUniqueRefId",
+											"value": ""
+										},
+										{
+											"key": "folioAccNo",
+											"value": "NEW"
+										},
+										{
+											"key": "folioCheckDigit",
+											"value": ""
+										},
+										{
+											"key": "rtaAmcCode",
+											"value": "135"
+										},
+										{
+											"key": "rtaSchemeCode",
+											"value": "AXD1D"
+										},
+										{
+											"key": "dividendOption",
+											"value": "P"
+										},
+										{
+											"key": "txnVolumeType",
+											"value": "A"
+										},
+										{
+											"key": "txnVolume",
+											"value": "5000"
+										},
+										{
+											"key": "recordNo",
+											"value": "2"
+										},
+										{
+											"key": "folioAccNo",
+											"value": "NEW"
+										},
+										{
+											"key": "folioCheckDigit",
+											"value": ""
+										},
+										{
+											"key": "rtaAmcCode",
+											"value": "135"
+										},
+										{
+											"key": "rtaSchemeCode",
+											"value": "AXD1D"
+										},
+										{
+											"key": "txnVolumeType",
+											"value": "A"
+										},
+										{
+											"key": "txnVolume",
+											"value": "5000"
+										},
+										{
+											"key": "extUniqueRefId",
+											"value": "123451"
+										},
+										{
+											"key": "dividendOption",
+											"value": "P"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "Set-Cookie",
+									"value": "JSESSIONID=ACA0021B61EA13D25E3908C6CA20E701; Path=/; Secure; HttpOnly"
+								},
+								{
+									"key": "X-FRAME-OPTIONS",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Jun 2023 07:05:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "MFU"
+								}
+							],
+							"cookie": [],
+							"body": "{\"respStatus\":\"0\",\"PurchaseAndSIPTxnForm\":{\"actionType\":\"CHECK\",\"addNomValFlag\":\"N\",\"amcCode\":[],\"applicationNo\":\"\",\"arnCode\":\"195775\",\"arnLabel\":\"\",\"arnNo\":\"\",\"arnSwapFlag\":\"N\",\"arnType\":\"\",\"autoRemarks\":\"\",\"bankSeqNo\":0,\"branchRMInternalCode\":\"\",\"can\":\"14163AKA01\",\"cartRefNo\":\"\",\"castApprType\":\" \",\"castChgAmtFlag\":\"N\",\"castEndDate\":\"\",\"castEndPerType\":\"\\u0000\",\"castExeDate\":\"\",\"castExecLevel\":\"I\",\"castFreqDay\":\"\",\"castFrequency\":\"\\u0000\",\"castGornChgAmtFlag\":\"N\",\"castGornChgPeriod\":\" \",\"castGornChgPrdType\":\" \",\"castGornChgPrdVal\":0,\"castGornChgType\":\"\",\"castGornChgVol\":0,\"castGornEndRangeDate\":\"\",\"castModeType\":\"N\",\"castNoOfInstallments\":0,\"castOrdFlag\":\"N\",\"castRefNo\":\"\",\"castSeqNo\":\"\",\"castStartDate\":\"\",\"castSubMode\":\"\\u0000\",\"cdpuImgRefNo\":\"\",\"changePeriod\":[],\"changePrdType\":[],\"changePrdVal\":[],\"changeType\":[],\"changeVol\":[],\"day\":[],\"ddDeclararion\":\"N\",\"depositBy\":\"N\",\"depositoryFlag\":\"N\",\"directFlag\":\"N\",\"directTranToAmcFlag\":\"N\",\"dividendOption\":[\"P\",\"P\"],\"donorCAN\":\"\",\"donorTaxStatus\":\"\",\"dpType\":\"\",\"dupOrdCheckFlag\":\"N\",\"endRangeDate\":[],\"end_Month\":[],\"end_Year\":[],\"entityRemarks\":\"\",\"entityType\":\"\",\"etfDPAccNo\":[],\"etfDPType\":[],\"euinDeclaration\":\"Y\",\"euincode\":\"\",\"extGroupRefNo\":\"\",\"extUniqueRefId\":[\"\",\"123451\"],\"fircStatus\":\"N\",\"firstInstDate\":[],\"folioAccNo\":[\"NEW\",\"NEW\"],\"folioCheckDigit\":[\"\",\"\"],\"folioDematFlag\":[],\"folioDetailFlag\":[],\"folioNo\":[],\"folioTxnFlag\":\"N\",\"frequency\":[],\"fromNFO\":\"\",\"fsAvailFlag\":[],\"gender\":\" \",\"groupOrderNo\":\"\",\"grpTokenNo\":[],\"guardPanExemptFlag\":[],\"guardPanPekrn\":[],\"guardianKYCStatus\":[],\"guardianName\":[],\"gurPanOrPekrn\":[],\"holdNat\":[],\"holderDetail\":\"\",\"holdingNature\":[],\"holdingType\":[],\"imgRefId\":\"\",\"imgRegen\":\"\\u0000\",\"insertPartId\":\"\",\"insertPartType\":0,\"instDate\":\"2023-06-22\",\"internalRemarks\":\"\",\"invDpAccNo\":\"\",\"invEmail\":[],\"invMobile\":[],\"invMobileISD\":[],\"invPanExemptFlag\":[],\"invPanPekrn\":[],\"invRIAConsFlag\":\"E\",\"investorKYCStatus\":[],\"investorName\":[],\"isCANBnk\":\"X\",\"isCDPUFlg\":\"N\",\"isETFAvail\":[],\"isFutureDateRedeem\":[],\"isRegBank\":\"X\",\"isSpecialProduct\":\"N\",\"isTempCart\":\"N\",\"itrnList\":\"\",\"joint1PanExemptFlag\":[],\"joint1PanPekrn\":[],\"joint2PanExemptFlag\":[],\"joint2PanPekrn\":[],\"jointFirstKYCStatus\":[],\"jointFirstName\":[],\"jointSecondKYCStatus\":[],\"jointSecondName\":[],\"kycInvalidPan\":\"\",\"lastModifiedDate\":0,\"lastModifiedTime\":0,\"leiNo\":[],\"logTp\":\"A\",\"machineId\":\"\",\"mandReqDate\":\"\",\"markUpRatio\":[],\"mfuModFlag\":\"N\",\"moblFlag\":\"N\",\"moblNo\":\"\",\"modAction\":\"\\u0000\",\"modRemark\":\"\",\"nav\":[],\"navDate\":[],\"newFolioFlag\":[\"N\"],\"newInvestor\":\"N\",\"nfoAutoSwtFlag\":[],\"nfoAutoSwtOption\":[],\"noOfAppUsers\":0,\"noOfBaskets\":[],\"noOfOtp\":0,\"noOfSchemes\":2,\"noOfUnits\":[],\"nomAddr1\":[],\"nomAddr2\":[],\"nomAddr3\":[],\"nomCity\":[],\"nomCountry\":[],\"nomGender\":[],\"nomMob\":[],\"nomPinCode\":[],\"nomState\":[],\"nomineeCount\":0,\"nomineeDOB\":[],\"nomineeGuardianDOB\":[],\"nomineeGuardianName\":[],\"nomineeGuardianRelation\":[],\"nomineeName\":[],\"nomineeOption\":\"X\",\"nomineePercent\":[],\"nomineeRelation\":[],\"orderDate\":0,\"orderMode\":\"Z\",\"otp\":[],\"otpPrefix\":[],\"otpRefNo\":\"\",\"page\":0,\"pageForRole\":\"INV\",\"paymentAmount\":10000,\"paymentFlag\":\"Y\",\"paymentRefNo\":\"\",\"payment_GatwayBankId\":\"\",\"payment_GatwayId\":\"\",\"payment_TxnDoneFlag\":\"Y\",\"payment_VirtAccNo\":\"MFSYES14163AKA01\",\"payment_bankId\":\"532\",\"payment_ifscCode\":\"171532002\",\"payment_instrumentType\":\"NE\",\"payment_invAccNo\":\"54545\",\"payment_invAccType\":\"SB\",\"payment_micrNo\":\"171532002\",\"payment_newVANFlag\":\"Y\",\"payoutFlag\":[],\"priPanOrPekrn\":[],\"proofForSourceDebtAcc\":\"N\",\"proofReceivedFlag\":\"N\",\"purComRedFlag\":\"N\",\"recordNo\":[1,2],\"redIfscCode\":[],\"redInvAccNo\":[],\"redMicrNo\":[],\"redTrigDate\":[],\"redTxnVolume\":[],\"redTxnVolumeType\":[],\"regenMode\":\"\\u0000\",\"resultValueMap\":null,\"riaCode\":\"\",\"riaFlag\":\"N\",\"riaNo\":\"\",\"riaType\":\"\",\"rtaAmcCode\":[\"135\",\"135\"],\"rtaEmailList\":[\"\",\"\"],\"rtaFolioTaxSt\":[],\"rtaMobList\":[\"\",\"\"],\"rtaRemarks\":\"\",\"rtaSchemeCode\":[\"AXD1D\",\"AXD1D\"],\"runningSeqNo\":0,\"schInstDate\":[],\"schPayFlag\":[],\"schPaymentRefNo\":[],\"schPaymentType\":[],\"schemeInstrNo\":[],\"schemeName\":[],\"secPanOrPekrn\":[],\"sendAllFlag\":\"N\",\"sendMailFlag\":\"N\",\"sipInsurFlag\":[],\"specialProdType\":\"\",\"specificDates\":\"\",\"srcBnkId\":[],\"srcIfscNo\":[],\"srcInvAccNo\":[],\"srcInvAccType\":[],\"srcMicrNo\":[],\"start_Month\":[],\"start_Year\":[],\"stepFacFlag\":[],\"stepInvConsFlag\":[],\"subBrkArnCode\":\"\",\"subBrkArnLabel\":\"\",\"subBrkArnType\":\"\",\"subBrokCode\":\"\",\"subSeqDonarCAN\":\"\",\"subSeq_bankId\":\"\",\"subSeq_endDate\":\"\",\"subSeq_existOTMFlag\":\"N\",\"subSeq_ifscCode\":\"\",\"subSeq_instrumentType\":\"\",\"subSeq_invAccNo\":\"\",\"subSeq_invAccType\":\"\",\"subSeq_maximumAmount\":0,\"subSeq_micrNo\":\"\",\"subSeq_paymentRefNo\":\"\",\"subSeq_perpetualFlag\":\" \",\"subSeq_startDate\":\"\",\"subsequentPaymentFlag\":\"N\",\"swpAmt\":[],\"sysRemrks\":\"\",\"systemDate\":\"\",\"tarSwpInstrNo\":[],\"targetBnkId\":[],\"targetIfscNo\":[],\"targetInvAccNo\":[],\"targetInvAccType\":[],\"targetMicrNo\":[],\"taxStatus\":[],\"tenure\":[],\"thirdPartyDeclaration\":\"N\",\"thirdPartyProofId\":\"\",\"thrPanOrPekrn\":[],\"time\":\"\",\"timeStampFlag\":\"\\u0000\",\"totalAmount\":10000,\"tranSource\":\"I\",\"txnBaseType\":\"C\",\"txnEvent\":\"Q\",\"txnType\":\"B\",\"txnVolume\":[5000,5000],\"txnVolumeType\":[\"A\",\"A\"],\"usrCode\":[],\"usrTarAmtFlag\":[],\"validCnt\":[\" \",\" \"],\"validContFlg\":\"\",\"validEmailList\":[\"\",\"\"],\"validFlag\":[],\"validMobList\":[\"\",\"\"],\"validatorResults\":null,\"verModule\":\"\",\"versionNo\":\"2.0\",\"viaSys\":\"N\"}}"
+						}
+					]
+				},
+				{
+					"name": "sell",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/RedeemAndSwpTxnAction.do?sendResponseFormat=JSON&logTp=A&txnType=R&orderMode=A&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=15252CAA01&noOfSchemes=2&recordNo=1&extUniqueRefId=SCHEMECODE1&folioAccNo=15252CAA0100000602&folioCheckDigit=&rtaAmcCode=FTI&rtaSchemeCode=201&dividendOption=N&txnVolumeType=E&txnVolume=&payoutFlag=Y&invAccNo=123456&micrNo=600036004&ifscCode=SCBL0036072&recordNo=2&extUniqueRefId=SCHEMECODE2&folioAccNo=15252CAA0100002708&folioCheckDigit=&rtaAmcCode=FTI&rtaSchemeCode=219&dividendOption=N&txnVolumeType=A&txnVolume=5000&payoutFlag=N&invAccNo=&micrNo=&ifscCode=&sendersubid=22347400001&sessioncontext=2234740000111F4C48",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"RedeemAndSwpTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "txnType",
+									"value": "R"
+								},
+								{
+									"key": "orderMode",
+									"value": "A"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "can",
+									"value": "15252CAA01"
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "2"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "SCHEMECODE1"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "15252CAA0100000602"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "201"
+								},
+								{
+									"key": "dividendOption",
+									"value": "N"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "E"
+								},
+								{
+									"key": "txnVolume",
+									"value": ""
+								},
+								{
+									"key": "payoutFlag",
+									"value": "Y"
+								},
+								{
+									"key": "invAccNo",
+									"value": "123456"
+								},
+								{
+									"key": "micrNo",
+									"value": "600036004"
+								},
+								{
+									"key": "ifscCode",
+									"value": "SCBL0036072"
+								},
+								{
+									"key": "recordNo",
+									"value": "2"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "SCHEMECODE2"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "15252CAA0100002708"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "219"
+								},
+								{
+									"key": "dividendOption",
+									"value": "N"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A"
+								},
+								{
+									"key": "txnVolume",
+									"value": "5000"
+								},
+								{
+									"key": "payoutFlag",
+									"value": "N"
+								},
+								{
+									"key": "invAccNo",
+									"value": ""
+								},
+								{
+									"key": "micrNo",
+									"value": ""
+								},
+								{
+									"key": "ifscCode",
+									"value": ""
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "2234740000111F4C48"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "purchase sip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/PurchaseAndSIPTxnAction.do?sendResponseFormat=JSON&logTp=A&txnType=V&orderMode=A&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=15252CAA01&paymentFlag=Y&subsequentPaymentFlag=Y&directFlag=N&arnType=&arnCode=0003&subBrokCode=&subBrkArnLabel=ARN-&subBrkArnType=&subBrkArnCode=&branchRMInternalCode=&euincode=&depositoryFlag=N&dpType=&invDpAccNo=&payment_invAccType=SB&payment_micrNo=123456789&payment_ifscCode=UTBI0BEC135&payment_bankId=027&instDate=&payment_instrumentType=DM&payment_invAccNo=11021981&paymentRefNo=BDS1000&paymentAmount=11000.00&subSeq_existOTMFlag=Y&subSeq_invAccType=SB&subSeq_micrNo=123456789&subSeq_ifscCode=UTBI0BEC135&subSeq_bankId=027&subSeq_instrumentType=DM&subSeq_maximumAmount=100000.00&subSeq_invAccNo=11021981&subSeq_paymentRefNo=BDS1000&noOfSchemes=2&totalAmount=11000.00&recordNo=1&extUniqueRefId=SCHEMECODE1&folioAccNo=NEW&folioCheckDigit=&rtaAmcCode=FTI&rtaSchemeCode=034&dividendOption=N&txnVolumeType=A&txnVolume=5000&frequency=M&day=7&start_Month=04&start_Year=2016&end_Month=09&end_Year=2020&recordNo=2&extUniqueRefId=SCHEMECODE2&folioAccNo=NEW&folioCheckDigit=&rtaAmcCode=R&rtaSchemeCode=EAIB&dividendOption=N&txnVolumeType=A&txnVolume=6000&frequency=Q&day=10&start_Month=04&start_Year=2016&end_Month=06&end_Year=2022&sendersubid=14079400005&sessioncontext=140794000058AF4B22",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"PurchaseAndSIPTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "txnType",
+									"value": "V"
+								},
+								{
+									"key": "orderMode",
+									"value": "A"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "can",
+									"value": "15252CAA01"
+								},
+								{
+									"key": "paymentFlag",
+									"value": "Y"
+								},
+								{
+									"key": "subsequentPaymentFlag",
+									"value": "Y"
+								},
+								{
+									"key": "directFlag",
+									"value": "N"
+								},
+								{
+									"key": "arnType",
+									"value": ""
+								},
+								{
+									"key": "arnCode",
+									"value": "0003"
+								},
+								{
+									"key": "subBrokCode",
+									"value": ""
+								},
+								{
+									"key": "subBrkArnLabel",
+									"value": "ARN-"
+								},
+								{
+									"key": "subBrkArnType",
+									"value": ""
+								},
+								{
+									"key": "subBrkArnCode",
+									"value": ""
+								},
+								{
+									"key": "branchRMInternalCode",
+									"value": ""
+								},
+								{
+									"key": "euincode",
+									"value": ""
+								},
+								{
+									"key": "depositoryFlag",
+									"value": "N"
+								},
+								{
+									"key": "dpType",
+									"value": ""
+								},
+								{
+									"key": "invDpAccNo",
+									"value": ""
+								},
+								{
+									"key": "payment_invAccType",
+									"value": "SB"
+								},
+								{
+									"key": "payment_micrNo",
+									"value": "123456789"
+								},
+								{
+									"key": "payment_ifscCode",
+									"value": "UTBI0BEC135"
+								},
+								{
+									"key": "payment_bankId",
+									"value": "027"
+								},
+								{
+									"key": "instDate",
+									"value": ""
+								},
+								{
+									"key": "payment_instrumentType",
+									"value": "DM"
+								},
+								{
+									"key": "payment_invAccNo",
+									"value": "11021981"
+								},
+								{
+									"key": "paymentRefNo",
+									"value": "BDS1000"
+								},
+								{
+									"key": "paymentAmount",
+									"value": "11000.00"
+								},
+								{
+									"key": "subSeq_existOTMFlag",
+									"value": "Y"
+								},
+								{
+									"key": "subSeq_invAccType",
+									"value": "SB"
+								},
+								{
+									"key": "subSeq_micrNo",
+									"value": "123456789"
+								},
+								{
+									"key": "subSeq_ifscCode",
+									"value": "UTBI0BEC135"
+								},
+								{
+									"key": "subSeq_bankId",
+									"value": "027"
+								},
+								{
+									"key": "subSeq_instrumentType",
+									"value": "DM"
+								},
+								{
+									"key": "subSeq_maximumAmount",
+									"value": "100000.00"
+								},
+								{
+									"key": "subSeq_invAccNo",
+									"value": "11021981"
+								},
+								{
+									"key": "subSeq_paymentRefNo",
+									"value": "BDS1000"
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "2"
+								},
+								{
+									"key": "totalAmount",
+									"value": "11000.00"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "SCHEMECODE1"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "NEW"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "034"
+								},
+								{
+									"key": "dividendOption",
+									"value": "N"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A"
+								},
+								{
+									"key": "txnVolume",
+									"value": "5000"
+								},
+								{
+									"key": "frequency",
+									"value": "M"
+								},
+								{
+									"key": "day",
+									"value": "7"
+								},
+								{
+									"key": "start_Month",
+									"value": "04"
+								},
+								{
+									"key": "start_Year",
+									"value": "2016"
+								},
+								{
+									"key": "end_Month",
+									"value": "09"
+								},
+								{
+									"key": "end_Year",
+									"value": "2020"
+								},
+								{
+									"key": "recordNo",
+									"value": "2"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "SCHEMECODE2"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "NEW"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "R"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "EAIB"
+								},
+								{
+									"key": "dividendOption",
+									"value": "N"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A"
+								},
+								{
+									"key": "txnVolume",
+									"value": "6000"
+								},
+								{
+									"key": "frequency",
+									"value": "Q"
+								},
+								{
+									"key": "day",
+									"value": "10"
+								},
+								{
+									"key": "start_Month",
+									"value": "04"
+								},
+								{
+									"key": "start_Year",
+									"value": "2016"
+								},
+								{
+									"key": "end_Month",
+									"value": "06"
+								},
+								{
+									"key": "end_Year",
+									"value": "2022"
+								},
+								{
+									"key": "sendersubid",
+									"value": "14079400005"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "140794000058AF4B22"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "swp sell",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/RedeemAndSwpTxnAction.do?sendResponseFormat=JSON&logTp=A&txnType=J&orderMode=A&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=15252CAA01&noOfSchemes=2&recordNo=1&extUniqueRefId=SCHEMECODE1&folioAccNo=15252CAA0100000701&folioCheckDigit=&rtaAmcCode=FTI&rtaSchemeCode=034&txnVolumeType=V&txnVolume=0&payoutFlag=Y&invAccNo=11021981&micrNo=123456789&ifscCode=UTBI0BEC135&frequency=M&day=LD&start_Month=09&start_Year=2016&end_Month=03&end_Year=2023&recordNo=2&extUniqueRefId=SCHEMECODE2&folioAccNo=15252CAA0100000101&folioCheckDigit=&rtaAmcCode=R&rtaSchemeCode=IPAR&txnVolumeType=A&txnVolume=5000&payoutFlag=N&invAccNo=&micrNo=&ifscCode=&frequency=Q&day=15&start_Month=02&start_Year=2016&end_Month=05&end_Year=2022&sendersubid=40304fo8&sessioncontext=40304FO8F3739FF2C0",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"RedeemAndSwpTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "txnType",
+									"value": "J"
+								},
+								{
+									"key": "orderMode",
+									"value": "A"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "can",
+									"value": "15252CAA01"
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "2"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "SCHEMECODE1"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "15252CAA0100000701"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "034"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "V"
+								},
+								{
+									"key": "txnVolume",
+									"value": "0"
+								},
+								{
+									"key": "payoutFlag",
+									"value": "Y"
+								},
+								{
+									"key": "invAccNo",
+									"value": "11021981"
+								},
+								{
+									"key": "micrNo",
+									"value": "123456789"
+								},
+								{
+									"key": "ifscCode",
+									"value": "UTBI0BEC135"
+								},
+								{
+									"key": "frequency",
+									"value": "M"
+								},
+								{
+									"key": "day",
+									"value": "LD"
+								},
+								{
+									"key": "start_Month",
+									"value": "09"
+								},
+								{
+									"key": "start_Year",
+									"value": "2016"
+								},
+								{
+									"key": "end_Month",
+									"value": "03"
+								},
+								{
+									"key": "end_Year",
+									"value": "2023"
+								},
+								{
+									"key": "recordNo",
+									"value": "2"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "SCHEMECODE2"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "15252CAA0100000101"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "R"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "IPAR"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A"
+								},
+								{
+									"key": "txnVolume",
+									"value": "5000"
+								},
+								{
+									"key": "payoutFlag",
+									"value": "N"
+								},
+								{
+									"key": "invAccNo",
+									"value": ""
+								},
+								{
+									"key": "micrNo",
+									"value": ""
+								},
+								{
+									"key": "ifscCode",
+									"value": ""
+								},
+								{
+									"key": "frequency",
+									"value": "Q"
+								},
+								{
+									"key": "day",
+									"value": "15"
+								},
+								{
+									"key": "start_Month",
+									"value": "02"
+								},
+								{
+									"key": "start_Year",
+									"value": "2016"
+								},
+								{
+									"key": "end_Month",
+									"value": "05"
+								},
+								{
+									"key": "end_Year",
+									"value": "2022"
+								},
+								{
+									"key": "sendersubid",
+									"value": "40304fo8"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "40304FO8F3739FF2C0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "can fetch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APICANFetchService.do?sendResponseFormat=JSON&logTp=A&entityId=40007K&panNo=ADXPW8350K&resdStatus=RI&modeOfHld=SI&dob=1998-06-25&sendersubid=22347400001&sessioncontext=22347400001BDCBC11",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APICANFetchService.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "entityId",
+									"value": "40007K"
+								},
+								{
+									"key": "panNo",
+									"value": "ADXPW8350K"
+								},
+								{
+									"key": "resdStatus",
+									"value": "RI"
+								},
+								{
+									"key": "modeOfHld",
+									"value": "SI"
+								},
+								{
+									"key": "dob",
+									"value": "1998-06-25"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "22347400001BDCBC11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/SwitchAndStpTxnAction.do?sendResponseFormat=JSON&logTp=A&txnType=E&orderMode=A&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=14328CJA01&directFlag=Y&arnType=&arnCode=&subBrokCode=&subBrkArnType=&subBrkArnCode=&branchRMInternalCode=&euincode=&depositoryFlag=N&dpType=&invDpAccNo=&noOfSchemes=2&recordNo=1&extUniqueRefId=SCHEMECODE1&folioAccNo=14328CJA0100000102&folioCheckDigit=&rtaAmcCode=FTI&srcSchemeCode=034&tarSchemeCode=463&dividendOption=P&txnVolumeType=V&txnVolume=0&frequency=D&day=NA&start_Month=06&start_Year=2016&end_Month=05&end_Year=2020&recordNo=2&extUniqueRefId=SCHEMECODE2&folioAccNo=14328CJA0100000501&folioCheckDigit=&rtaAmcCode=FTI&srcSchemeCode=415&tarSchemeCode=463&dividendOption=N&txnVolumeType=V&txnVolume=0&frequency=D&day=NA&start_Month=02&start_Year=2016&end_Month=05&end_Year=2020&sendersubid=40304fo8&sessioncontext=40304FO8AFE1ABA237",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"SwitchAndStpTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "txnType",
+									"value": "E"
+								},
+								{
+									"key": "orderMode",
+									"value": "A"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "can",
+									"value": "14328CJA01"
+								},
+								{
+									"key": "directFlag",
+									"value": "Y"
+								},
+								{
+									"key": "arnType",
+									"value": ""
+								},
+								{
+									"key": "arnCode",
+									"value": ""
+								},
+								{
+									"key": "subBrokCode",
+									"value": ""
+								},
+								{
+									"key": "subBrkArnType",
+									"value": ""
+								},
+								{
+									"key": "subBrkArnCode",
+									"value": ""
+								},
+								{
+									"key": "branchRMInternalCode",
+									"value": ""
+								},
+								{
+									"key": "euincode",
+									"value": ""
+								},
+								{
+									"key": "depositoryFlag",
+									"value": "N"
+								},
+								{
+									"key": "dpType",
+									"value": ""
+								},
+								{
+									"key": "invDpAccNo",
+									"value": ""
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "2"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "SCHEMECODE1"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "14328CJA0100000102"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "srcSchemeCode",
+									"value": "034"
+								},
+								{
+									"key": "tarSchemeCode",
+									"value": "463"
+								},
+								{
+									"key": "dividendOption",
+									"value": "P"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "V"
+								},
+								{
+									"key": "txnVolume",
+									"value": "0"
+								},
+								{
+									"key": "frequency",
+									"value": "D"
+								},
+								{
+									"key": "day",
+									"value": "NA"
+								},
+								{
+									"key": "start_Month",
+									"value": "06"
+								},
+								{
+									"key": "start_Year",
+									"value": "2016"
+								},
+								{
+									"key": "end_Month",
+									"value": "05"
+								},
+								{
+									"key": "end_Year",
+									"value": "2020"
+								},
+								{
+									"key": "recordNo",
+									"value": "2"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "SCHEMECODE2"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "14328CJA0100000501"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "srcSchemeCode",
+									"value": "415"
+								},
+								{
+									"key": "tarSchemeCode",
+									"value": "463"
+								},
+								{
+									"key": "dividendOption",
+									"value": "N"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "V"
+								},
+								{
+									"key": "txnVolume",
+									"value": "0"
+								},
+								{
+									"key": "frequency",
+									"value": "D"
+								},
+								{
+									"key": "day",
+									"value": "NA"
+								},
+								{
+									"key": "start_Month",
+									"value": "02"
+								},
+								{
+									"key": "start_Year",
+									"value": "2016"
+								},
+								{
+									"key": "end_Month",
+									"value": "05"
+								},
+								{
+									"key": "end_Year",
+									"value": "2020"
+								},
+								{
+									"key": "sendersubid",
+									"value": "40304fo8"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "40304FO8AFE1ABA237"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payment credit details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APIPayCreditDetailsAction.do?sendResponseFormat=JSON&logTp=A&entityId=DST304&batchDate=2016-03-11&batchNo=2016031101&userId=40304FO1&fileType=APITXN&transferRefNo=REFNUMBR123&totalAmount=50000&timestamp=20160311:12:45:44.78&noOfRecords=3&collBankId=007&collBankAccNo=MFUACCNO1234&recordNo=1&groupOrderNo=16054AZA01111&paymentRefNo=PAYREFNO1&invBankCode=CODE1&invBankAccNo=INVACCNO1&txnAmount=4000&recordNo=2&groupOrderNo=16054AZA01112&paymentRefNo=PAYREFNO2&invBankCode=CODE2&invBankAccNo=INVACCNO2&txnAmount=5000&sendersubid=40304FO10&sessioncontext=40304FO10C18925E0A",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APIPayCreditDetailsAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "entityId",
+									"value": "DST304"
+								},
+								{
+									"key": "batchDate",
+									"value": "2016-03-11"
+								},
+								{
+									"key": "batchNo",
+									"value": "2016031101"
+								},
+								{
+									"key": "userId",
+									"value": "40304FO1"
+								},
+								{
+									"key": "fileType",
+									"value": "APITXN"
+								},
+								{
+									"key": "transferRefNo",
+									"value": "REFNUMBR123"
+								},
+								{
+									"key": "totalAmount",
+									"value": "50000"
+								},
+								{
+									"key": "timestamp",
+									"value": "20160311:12:45:44.78"
+								},
+								{
+									"key": "noOfRecords",
+									"value": "3"
+								},
+								{
+									"key": "collBankId",
+									"value": "007"
+								},
+								{
+									"key": "collBankAccNo",
+									"value": "MFUACCNO1234"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "groupOrderNo",
+									"value": "16054AZA01111"
+								},
+								{
+									"key": "paymentRefNo",
+									"value": "PAYREFNO1"
+								},
+								{
+									"key": "invBankCode",
+									"value": "CODE1"
+								},
+								{
+									"key": "invBankAccNo",
+									"value": "INVACCNO1"
+								},
+								{
+									"key": "txnAmount",
+									"value": "4000"
+								},
+								{
+									"key": "recordNo",
+									"value": "2"
+								},
+								{
+									"key": "groupOrderNo",
+									"value": "16054AZA01112"
+								},
+								{
+									"key": "paymentRefNo",
+									"value": "PAYREFNO2"
+								},
+								{
+									"key": "invBankCode",
+									"value": "CODE2"
+								},
+								{
+									"key": "invBankAccNo",
+									"value": "INVACCNO2"
+								},
+								{
+									"key": "txnAmount",
+									"value": "5000"
+								},
+								{
+									"key": "sendersubid",
+									"value": "40304FO10"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "40304FO10C18925E0A"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bank validation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APICANBankValidationService.do?sendResponseFormat=JSON&logTp=A&entityId=DST304&can=15252CAA01&accountNo=555654534&micrNo=19810220&ifscCode=FECD12345&sendersubid=40304FO10&sessioncontext=40304FO10C18925E0A",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APICANBankValidationService.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "entityId",
+									"value": "DST304"
+								},
+								{
+									"key": "can",
+									"value": "15252CAA01"
+								},
+								{
+									"key": "accountNo",
+									"value": "555654534"
+								},
+								{
+									"key": "micrNo",
+									"value": "19810220"
+								},
+								{
+									"key": "ifscCode",
+									"value": "FECD12345"
+								},
+								{
+									"key": "sendersubid",
+									"value": "40304FO10"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "40304FO10C18925E0A"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prn validation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APIPRNValidationService.do?sendResponseFormat=JSON&\nsessioncontext=1420540002S14978DE&sendersubid=1420540002S&logTp=A&can=C4098AC00Q&PRN=UMRN002&MMRN=15253198911272F080CC&bankAccNo=333333333330",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APIPRNValidationService.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "\nsessioncontext",
+									"value": "1420540002S14978DE"
+								},
+								{
+									"key": "sendersubid",
+									"value": "1420540002S"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "can",
+									"value": "C4098AC00Q"
+								},
+								{
+									"key": "PRN",
+									"value": "UMRN002"
+								},
+								{
+									"key": "MMRN",
+									"value": "15253198911272F080CC"
+								},
+								{
+									"key": "bankAccNo",
+									"value": "333333333330"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "systematic cancellation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/SystematicCancellationAction.do?sendResponseFormat=JSON&ignoreGlobalParams=true&logTp=A&txnEvent=Q&txnType=C&ordConfirm=Y&orderMode=A&canId=15219CGA02&noOfRecords=1&parentGORN=15219CGA02001115&parentITRN=01&sendersubid=1535542000A&sessioncontext=1535542000A1E70FB00",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"SystematicCancellationAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "ignoreGlobalParams",
+									"value": "true"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "txnType",
+									"value": "C"
+								},
+								{
+									"key": "ordConfirm",
+									"value": "Y"
+								},
+								{
+									"key": "orderMode",
+									"value": "A"
+								},
+								{
+									"key": "canId",
+									"value": "15219CGA02"
+								},
+								{
+									"key": "noOfRecords",
+									"value": "1"
+								},
+								{
+									"key": "parentGORN",
+									"value": "15219CGA02001115"
+								},
+								{
+									"key": "parentITRN",
+									"value": "01"
+								},
+								{
+									"key": "sendersubid",
+									"value": "1535542000A"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "1535542000A1E70FB00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payment credit details status ()",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APIPayCreditStatusAction.do?sendResponseFormat=JSON&logTp=A&entityId=DST304&batchDate=2016-03-11&batchNo=2016031101&userId=40304FO1&fileType=APITXN&sendersubid=40304FO10&sessioncontext=40304FO10C18925E0A",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APIPayCreditStatusAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "entityId",
+									"value": "DST304"
+								},
+								{
+									"key": "batchDate",
+									"value": "2016-03-11"
+								},
+								{
+									"key": "batchNo",
+									"value": "2016031101"
+								},
+								{
+									"key": "userId",
+									"value": "40304FO1"
+								},
+								{
+									"key": "fileType",
+									"value": "APITXN"
+								},
+								{
+									"key": "sendersubid",
+									"value": "40304FO10"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "40304FO10C18925E0A"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order payment link APIEezz ()",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APIOrderApprovalLink .do?sendResponseFormat=JSON&sessioncontext=160624000038D564AF&sendersubid=16062400003&logTp=A&entityId=400014&can=14163BEA01&groupOrdNo=14163BEA01002866",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APIOrderApprovalLink .do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "160624000038D564AF"
+								},
+								{
+									"key": "sendersubid",
+									"value": "16062400003"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "entityId",
+									"value": "400014"
+								},
+								{
+									"key": "can",
+									"value": "14163BEA01"
+								},
+								{
+									"key": "groupOrdNo",
+									"value": "14163BEA01002866"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "can folio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APICANFolioValidService.do/APICANFolioValidService.do?sendResponseFormat=JSON&logTp=A&can=14078BCA10&folio=TN8901&checkDigit=02&txnType=B&rtaFundCode=RGF&sendersubid=1535542000A&sessioncontext=1535542000A14652D2",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APICANFolioValidService.do",
+								"APICANFolioValidService.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "can",
+									"value": "14078BCA10"
+								},
+								{
+									"key": "folio",
+									"value": "TN8901"
+								},
+								{
+									"key": "checkDigit",
+									"value": "02"
+								},
+								{
+									"key": "txnType",
+									"value": "B"
+								},
+								{
+									"key": "rtaFundCode",
+									"value": "RGF"
+								},
+								{
+									"key": "sendersubid",
+									"value": "1535542000A"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "1535542000A14652D2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "password expiry extend",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APIUsrPwdExtendService.do?APIUsrPwdExtendService.do?sendResponseFormat=JSON&logTp=A&entityId=XXXXX&userId=15355XXXXA&noOfDays=20&sendersubid=1535542000A&sessioncontext=1535542000A1840290",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APIUsrPwdExtendService.do"
+							],
+							"query": [
+								{
+									"key": "APIUsrPwdExtendService.do?sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "entityId",
+									"value": "XXXXX"
+								},
+								{
+									"key": "userId",
+									"value": "15355XXXXA"
+								},
+								{
+									"key": "noOfDays",
+									"value": "20"
+								},
+								{
+									"key": "sendersubid",
+									"value": "1535542000A"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "1535542000A1840290"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "investor consent entry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/ConsentAPIEntryAction.do?ConsentAPIEntryAction.do?sendResponseFormat=JSON&sessioncontext=2014740000148C253E&sendersubid=20147400001&logTp=A&can=162XXXXX1&pan=JOINT9876X&mobNo=45465657567&noOfRec=3&dataSetKey=MF&dataSetKey=CD&dataSetKey=PD",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"ConsentAPIEntryAction.do"
+							],
+							"query": [
+								{
+									"key": "ConsentAPIEntryAction.do?sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "2014740000148C253E"
+								},
+								{
+									"key": "sendersubid",
+									"value": "20147400001"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "can",
+									"value": "162XXXXX1"
+								},
+								{
+									"key": "pan",
+									"value": "JOINT9876X"
+								},
+								{
+									"key": "mobNo",
+									"value": "45465657567"
+								},
+								{
+									"key": "noOfRec",
+									"value": "3"
+								},
+								{
+									"key": "dataSetKey",
+									"value": "MF"
+								},
+								{
+									"key": "dataSetKey",
+									"value": "CD"
+								},
+								{
+									"key": "dataSetKey",
+									"value": "PD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "investor consent view",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/ConsentDetAPIViewAction.do?/ConsentDetAPIViewAction.do?sendResponseFormat=JSON&logTp=A&type=V&reqType=AV&refNo=12345678923456789123&sendersubid=1535542000A&sessioncontext=1535542000A75A5DD6",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"ConsentDetAPIViewAction.do"
+							],
+							"query": [
+								{
+									"key": "/ConsentDetAPIViewAction.do?sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "type",
+									"value": "V"
+								},
+								{
+									"key": "reqType",
+									"value": "AV"
+								},
+								{
+									"key": "refNo",
+									"value": "12345678923456789123"
+								},
+								{
+									"key": "sendersubid",
+									"value": "1535542000A"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "1535542000A75A5DD6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/ordStExtRefAction.do?sendResponseFormat=JSON&logTp=A&sendersubid=1535542000A&sessioncontext=1535542000A75A5DD6&entityId=400035&extGroupRefNo=ENT00001&can=",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"ordStExtRefAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "sendersubid",
+									"value": "1535542000A"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "1535542000A75A5DD6"
+								},
+								{
+									"key": "entityId",
+									"value": "400035"
+								},
+								{
+									"key": "extGroupRefNo",
+									"value": "ENT00001"
+								},
+								{
+									"key": "can",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "password change",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APIUsrPwdResetService.do?sendResponseFormat=JSON&logTp=A&entityId=XXXXX&userId=15355XXXXA&sendersubid=1535542000A&sessioncontext=1535542000A1840290&oldPassWord=0cDQxPXO2fCpzfXn43wAdw==&newPassWord=02DExPXO2fCpzfXn43qSDf==",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APIUsrPwdResetService.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "entityId",
+									"value": "XXXXX"
+								},
+								{
+									"key": "userId",
+									"value": "15355XXXXA"
+								},
+								{
+									"key": "sendersubid",
+									"value": "1535542000A"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "1535542000A1840290"
+								},
+								{
+									"key": "oldPassWord",
+									"value": "0cDQxPXO2fCpzfXn43wAdw=="
+								},
+								{
+									"key": "newPassWord",
+									"value": "02DExPXO2fCpzfXn43qSDf=="
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "swap PayEezz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/SwapPayEezzApiMaint.do?sendResponseFormat=JSON&sessioncontext=1535542000A75A5DD6&sendersubid=1535542000A&logTp=A&can=UXXXXXXXXX&gorn=UXXXXXXXXX1001346&newPRN=continetnprn&bankId=229&micr=411229003&ifsc=ICIC0000029&accType=SB&accNo=50010025822103&jointHolderFlag=Y&holderDetail=[{\"type\":\"PRI\",\"pan\":\"QWERT1234G\",\"ipAddr\":\"126.18.90.18\",\"logonTS\":\"2018-11-13 10:10:10\" },{\"type\":\"SEC\",\"pan\":\"QWERT1234A\",\"ipAddr\":\"126.18.90.20\",\"logonTS\":\"2018-11-13 10:10:15\" }]",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"SwapPayEezzApiMaint.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "1535542000A75A5DD6"
+								},
+								{
+									"key": "sendersubid",
+									"value": "1535542000A"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "can",
+									"value": "UXXXXXXXXX"
+								},
+								{
+									"key": "gorn",
+									"value": "UXXXXXXXXX1001346"
+								},
+								{
+									"key": "newPRN",
+									"value": "continetnprn"
+								},
+								{
+									"key": "bankId",
+									"value": "229"
+								},
+								{
+									"key": "micr",
+									"value": "411229003"
+								},
+								{
+									"key": "ifsc",
+									"value": "ICIC0000029"
+								},
+								{
+									"key": "accType",
+									"value": "SB"
+								},
+								{
+									"key": "accNo",
+									"value": "50010025822103"
+								},
+								{
+									"key": "jointHolderFlag",
+									"value": "Y"
+								},
+								{
+									"key": "holderDetail",
+									"value": "[{\"type\":\"PRI\",\"pan\":\"QWERT1234G\",\"ipAddr\":\"126.18.90.18\",\"logonTS\":\"2018-11-13 10:10:10\" },{\"type\":\"SEC\",\"pan\":\"QWERT1234A\",\"ipAddr\":\"126.18.90.20\",\"logonTS\":\"2018-11-13 10:10:15\" }]"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nominee verification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/NomAPIVerifyLnkReq.do?sendResponseFormat=JSON&logTp=A&sessioncontext=20147400001D26592C&sendersubid=20147400001&can=XXXXXXXXXX&pan=XXXXXXXX&dob=1998-09-09",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"NomAPIVerifyLnkReq.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "20147400001D26592C"
+								},
+								{
+									"key": "sendersubid",
+									"value": "20147400001"
+								},
+								{
+									"key": "can",
+									"value": "XXXXXXXXXX"
+								},
+								{
+									"key": "pan",
+									"value": "XXXXXXXX"
+								},
+								{
+									"key": "dob",
+									"value": "1998-09-09"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new purchase sip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/PurchaseAndSIPTxnAction.do?sendResponseFormat=JSON&sessioncontext=22347400001048F13E&sendersubid=22347400001&logTp=A&versionNo=2.0&txnType=V&orderMode=Z&tranSource=E&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=14157AZA01&jointHolderFlag=N&holderDetail&directFlag=N&arnType&arnCode=195775&subBrkArnLabel=ARN-&subBrkArnType&subBrkArnCode&subBrokCode&branchRMInternalCode&euincode&euinDeclaration=Y&depositoryFlag=N&paymentFlag=Y&payment_instrumentType=RT&payment_bankId=532&payment_invAccType=SB&payment_micrNo=799532002&payment_ifscCode=YESB0000155&instDate=2024-01-20&payment_invAccNo=025199000006067&payment_TxnDoneFlag=Y&paymentRefNo=&payment_newVANFlag=Y&payment_VirtAccNo=MFUYES14157AZA01&paymentAmount=500000&totalAmount=500000&subsequentPaymentFlag=Y&subSeq_existOTMFlag=Y&subSeq_invAccType=SB&subSeq_invAccNo=025199000006067&subSeq_micrNo=799532002&subSeq_ifscCode=YESB0000155&subSeq_bankId=532&subSeq_instrumentType=DM&subSeq_maximumAmount=500000&subSeq_perpetualFlag=Y&subSeq_startDate=2024-02-01&subSeq_endDate=2028-10-14&subSeq_paymentRefNo=&noOfSchemes=1&recordNo=1&extUniqueRefId=123451&folioAccNo=NEW&folioCheckDigit&rtaAmcCode=BAF&rtaSchemeCode=AFDQD&dividendOption=P&txnVolumeType=A&txnVolume=500000&frequency=M&day=01&start_Month=02&start_Year=2024&end_Month=02&end_Year=2028",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"PurchaseAndSIPTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "22347400001048F13E"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "versionNo",
+									"value": "2.0"
+								},
+								{
+									"key": "txnType",
+									"value": "V"
+								},
+								{
+									"key": "orderMode",
+									"value": "Z"
+								},
+								{
+									"key": "tranSource",
+									"value": "E"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "can",
+									"value": "14157AZA01"
+								},
+								{
+									"key": "jointHolderFlag",
+									"value": "N"
+								},
+								{
+									"key": "holderDetail",
+									"value": null
+								},
+								{
+									"key": "directFlag",
+									"value": "N"
+								},
+								{
+									"key": "arnType",
+									"value": null
+								},
+								{
+									"key": "arnCode",
+									"value": "195775"
+								},
+								{
+									"key": "subBrkArnLabel",
+									"value": "ARN-"
+								},
+								{
+									"key": "subBrkArnType",
+									"value": null
+								},
+								{
+									"key": "subBrkArnCode",
+									"value": null
+								},
+								{
+									"key": "subBrokCode",
+									"value": null
+								},
+								{
+									"key": "branchRMInternalCode",
+									"value": null
+								},
+								{
+									"key": "euincode",
+									"value": null
+								},
+								{
+									"key": "euinDeclaration",
+									"value": "Y"
+								},
+								{
+									"key": "depositoryFlag",
+									"value": "N"
+								},
+								{
+									"key": "paymentFlag",
+									"value": "Y"
+								},
+								{
+									"key": "payment_instrumentType",
+									"value": "RT"
+								},
+								{
+									"key": "payment_bankId",
+									"value": "532"
+								},
+								{
+									"key": "payment_invAccType",
+									"value": "SB"
+								},
+								{
+									"key": "payment_micrNo",
+									"value": "799532002"
+								},
+								{
+									"key": "payment_ifscCode",
+									"value": "YESB0000155"
+								},
+								{
+									"key": "instDate",
+									"value": "2024-01-20"
+								},
+								{
+									"key": "payment_invAccNo",
+									"value": "025199000006067"
+								},
+								{
+									"key": "payment_TxnDoneFlag",
+									"value": "Y"
+								},
+								{
+									"key": "paymentRefNo",
+									"value": ""
+								},
+								{
+									"key": "payment_newVANFlag",
+									"value": "Y"
+								},
+								{
+									"key": "payment_VirtAccNo",
+									"value": "MFUYES14157AZA01"
+								},
+								{
+									"key": "paymentAmount",
+									"value": "500000"
+								},
+								{
+									"key": "totalAmount",
+									"value": "500000"
+								},
+								{
+									"key": "subsequentPaymentFlag",
+									"value": "Y"
+								},
+								{
+									"key": "subSeq_existOTMFlag",
+									"value": "Y"
+								},
+								{
+									"key": "subSeq_invAccType",
+									"value": "SB"
+								},
+								{
+									"key": "subSeq_invAccNo",
+									"value": "025199000006067"
+								},
+								{
+									"key": "subSeq_micrNo",
+									"value": "799532002"
+								},
+								{
+									"key": "subSeq_ifscCode",
+									"value": "YESB0000155"
+								},
+								{
+									"key": "subSeq_bankId",
+									"value": "532"
+								},
+								{
+									"key": "subSeq_instrumentType",
+									"value": "DM"
+								},
+								{
+									"key": "subSeq_maximumAmount",
+									"value": "500000"
+								},
+								{
+									"key": "subSeq_perpetualFlag",
+									"value": "Y"
+								},
+								{
+									"key": "subSeq_startDate",
+									"value": "2024-02-01"
+								},
+								{
+									"key": "subSeq_endDate",
+									"value": "2028-10-14"
+								},
+								{
+									"key": "subSeq_paymentRefNo",
+									"value": ""
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "1"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "NEW"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": null
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "BAF"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "AFDQD"
+								},
+								{
+									"key": "dividendOption",
+									"value": "P"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A"
+								},
+								{
+									"key": "txnVolume",
+									"value": "500000"
+								},
+								{
+									"key": "frequency",
+									"value": "M"
+								},
+								{
+									"key": "day",
+									"value": "01"
+								},
+								{
+									"key": "start_Month",
+									"value": "02"
+								},
+								{
+									"key": "start_Year",
+									"value": "2024"
+								},
+								{
+									"key": "end_Month",
+									"value": "02"
+								},
+								{
+									"key": "end_Year",
+									"value": "2028"
+								},
+								{
+									"key": "recordNo",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451",
+									"disabled": true
+								},
+								{
+									"key": "folioAccNo",
+									"value": "NEW",
+									"disabled": true
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "BAF",
+									"disabled": true
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "MCRDD",
+									"disabled": true
+								},
+								{
+									"key": "dividendOption",
+									"value": "P",
+									"disabled": true
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A",
+									"disabled": true
+								},
+								{
+									"key": "txnVolume",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "frequency",
+									"value": "M",
+									"disabled": true
+								},
+								{
+									"key": "day",
+									"value": "07",
+									"disabled": true
+								},
+								{
+									"key": "start_Month",
+									"value": "02",
+									"disabled": true
+								},
+								{
+									"key": "start_Year",
+									"value": "2024",
+									"disabled": true
+								},
+								{
+									"key": "end_Month",
+									"value": "02",
+									"disabled": true
+								},
+								{
+									"key": "end_Year",
+									"value": "2028",
+									"disabled": true
+								},
+								{
+									"key": "riaFlag",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "riaCode",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "dpType",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "invDpAccNo",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "extGroupRefNo",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "holdNat",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "taxStatus",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "priPanOrPekrn",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "secPanOrPekrn",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "thrPanOrPekrn",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "gurPanOrPekrn",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new_redeem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/RedeemAndSwpTxnAction.do?sendResponseFormat=JSON&sessioncontext=223474000013ED8E00&sendersubid=22347400001&logTp=A&versionNo=2.0&txnType=R&orderMode=Z&tranSource=E&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=IN&can=14157AZA01&jointHolderFlag=N&holderDetail&noOfSchemes=2&recordNo=1&extUniqueRefId=123451&folioAccNo=18314550&folioCheckDigit&rtaAmcCode=FTI&rtaSchemeCode=414&txnVolumeType=A&txnVolume=1000&recordNo=2&extUniqueRefId=123451&folioAccNo=18314550&folioCheckDigit&rtaAmcCode=FTI&rtaSchemeCode=414&txnVolumeType=A&txnVolume=1000&payoutFlag=Y&invAccNo=50200013404502&micrNo=110240012&ifscCode=HDFC0000090&payoutFlag=Y&invAccNo=50200013404502&micrNo=110240012&ifscCode=HDFC0000090",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"RedeemAndSwpTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "223474000013ED8E00"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "versionNo",
+									"value": "2.0"
+								},
+								{
+									"key": "txnType",
+									"value": "R"
+								},
+								{
+									"key": "orderMode",
+									"value": "Z"
+								},
+								{
+									"key": "tranSource",
+									"value": "E"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "IN"
+								},
+								{
+									"key": "can",
+									"value": "14157AZA01"
+								},
+								{
+									"key": "jointHolderFlag",
+									"value": "N"
+								},
+								{
+									"key": "holderDetail",
+									"value": null
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "2"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "18314550"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": null
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "414"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A"
+								},
+								{
+									"key": "txnVolume",
+									"value": "1000"
+								},
+								{
+									"key": "recordNo",
+									"value": "2"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "18314550"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": null
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "414"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "A"
+								},
+								{
+									"key": "txnVolume",
+									"value": "1000"
+								},
+								{
+									"key": "payoutFlag",
+									"value": "Y"
+								},
+								{
+									"key": "invAccNo",
+									"value": "50200013404502"
+								},
+								{
+									"key": "micrNo",
+									"value": "110240012"
+								},
+								{
+									"key": "ifscCode",
+									"value": "HDFC0000090"
+								},
+								{
+									"key": "extGroupRefNo",
+									"value": "123451",
+									"disabled": true
+								},
+								{
+									"key": "leiNo",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "holdNat",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "taxStatus",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "priPanOrPekrn",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "secPanOrPekrn",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "thrPanOrPekrn",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "gurPanOrPekrn",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "payoutFlag",
+									"value": "Y"
+								},
+								{
+									"key": "invAccNo",
+									"value": "50200013404502"
+								},
+								{
+									"key": "micrNo",
+									"value": "110240012"
+								},
+								{
+									"key": "ifscCode",
+									"value": "HDFC0000090"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order approval link",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/APIOrderApprovalLink.do?sendResponseFormat=JSON&sessioncontext=223474000010DC7E48&sendersubid=22347400001&logTp=A&entityId=400014&can=14162AZA01&groupOrdNo=14163BEA01002866",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"APIOrderApprovalLink.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "223474000010DC7E48"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "entityId",
+									"value": "400014"
+								},
+								{
+									"key": "can",
+									"value": "14162AZA01"
+								},
+								{
+									"key": "groupOrdNo",
+									"value": "14163BEA01002866"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New_swp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/RedeemAndSwpTxnAction.do?sendResponseFormat=JSON&sessioncontext=22347400001177DA93&sendersubid=22347400001&logTp=A&versionNo=2.0&txnType=J&tranSource=E&orderMode=Z&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=14157AZA01&jointHolderFlag=N&holderDetail=&extGroupRefNo&noOfSchemes=1&recordNo=1&extUniqueRefId=123451&folioAccNo=18314548&folioCheckDigit&holdNat&taxStatus&priPanOrPekrn&secPanOrPekrn&thrPanOrPekrn&gurPanOrPekrn&rtaAmcCode=FTI&rtaSchemeCode=414&txnVolumeType=F&txnVolume=5000&payoutFlag=Y&invAccNo=50200013404502&micrNo=110240012&ifscCode=HDFC0000090&frequency=M&day=05&start_Month=12&start_Year=2023&end_Month=11&end_Year=2024",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"RedeemAndSwpTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "22347400001177DA93"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "versionNo",
+									"value": "2.0"
+								},
+								{
+									"key": "txnType",
+									"value": "J"
+								},
+								{
+									"key": "tranSource",
+									"value": "E"
+								},
+								{
+									"key": "orderMode",
+									"value": "Z"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "can",
+									"value": "14157AZA01"
+								},
+								{
+									"key": "jointHolderFlag",
+									"value": "N"
+								},
+								{
+									"key": "holderDetail",
+									"value": ""
+								},
+								{
+									"key": "extGroupRefNo",
+									"value": null
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "1"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "18314548"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": null
+								},
+								{
+									"key": "holdNat",
+									"value": null
+								},
+								{
+									"key": "taxStatus",
+									"value": null
+								},
+								{
+									"key": "priPanOrPekrn",
+									"value": null
+								},
+								{
+									"key": "secPanOrPekrn",
+									"value": null
+								},
+								{
+									"key": "thrPanOrPekrn",
+									"value": null
+								},
+								{
+									"key": "gurPanOrPekrn",
+									"value": null
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "rtaSchemeCode",
+									"value": "414"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "F"
+								},
+								{
+									"key": "txnVolume",
+									"value": "5000"
+								},
+								{
+									"key": "payoutFlag",
+									"value": "Y"
+								},
+								{
+									"key": "invAccNo",
+									"value": "50200013404502"
+								},
+								{
+									"key": "micrNo",
+									"value": "110240012"
+								},
+								{
+									"key": "ifscCode",
+									"value": "HDFC0000090"
+								},
+								{
+									"key": "frequency",
+									"value": "M"
+								},
+								{
+									"key": "day",
+									"value": "05"
+								},
+								{
+									"key": "start_Month",
+									"value": "12"
+								},
+								{
+									"key": "start_Year",
+									"value": "2023"
+								},
+								{
+									"key": "end_Month",
+									"value": "11"
+								},
+								{
+									"key": "end_Year",
+									"value": "2024"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Stp ( Regular Schemes - with ARN/Sub-ARN/EUIN)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:7003/SwitchAndStpTxnAction.do?sendResponseFormat=JSON&sessioncontext=2234740000145B432E&sendersubid=22347400001&logTp=A&versionNo=2.0&txnType=E&orderMode=Z&tranSource=E&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=14157AZA01&jointHolderFlag=N&holderDetail&directFlag=N&arnType&arnCode=195775&subBrkArnLabel=ARN-&subBrkArnType&subBrkArnCode&subBrokCode=&depositoryFlag=Y&dpType=NSDL&invDpAccNo=IN23456789012345&noOfSchemes=1&recordNo=1&folioAccNo=ARMFN001&folioCheckDigit&holdNat&taxStatus&rtaAmcCode=FTI&srcSchemeCode=001&tarSchemeCode=046&dividendOption=R&txnVolumeType=F&txnVolume=1000&frequency=D&day=NA&start_Month=02&start_Year=2024&end_Month=12&end_Year=2024&euinDeclaration=Y",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "7003",
+							"path": [
+								"SwitchAndStpTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "2234740000145B432E"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "versionNo",
+									"value": "2.0"
+								},
+								{
+									"key": "txnType",
+									"value": "E"
+								},
+								{
+									"key": "orderMode",
+									"value": "Z"
+								},
+								{
+									"key": "tranSource",
+									"value": "E"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "can",
+									"value": "14157AZA01"
+								},
+								{
+									"key": "jointHolderFlag",
+									"value": "N"
+								},
+								{
+									"key": "holderDetail",
+									"value": null
+								},
+								{
+									"key": "directFlag",
+									"value": "N"
+								},
+								{
+									"key": "RiaFlag",
+									"value": "Y",
+									"disabled": true
+								},
+								{
+									"key": "riaCode",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "arnType",
+									"value": null
+								},
+								{
+									"key": "arnCode",
+									"value": "195775"
+								},
+								{
+									"key": "subBrkArnLabel",
+									"value": "ARN-"
+								},
+								{
+									"key": "subBrkArnType",
+									"value": null
+								},
+								{
+									"key": "subBrkArnCode",
+									"value": null
+								},
+								{
+									"key": "subBrokCode",
+									"value": ""
+								},
+								{
+									"key": "depositoryFlag",
+									"value": "Y"
+								},
+								{
+									"key": "dpType",
+									"value": "NSDL"
+								},
+								{
+									"key": "invDpAccNo",
+									"value": "IN23456789012345"
+								},
+								{
+									"key": "extGroupRefNo",
+									"value": "123451",
+									"disabled": true
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "1"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451",
+									"disabled": true
+								},
+								{
+									"key": "folioAccNo",
+									"value": "ARMFN001"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": null
+								},
+								{
+									"key": "holdNat",
+									"value": null
+								},
+								{
+									"key": "taxStatus",
+									"value": null
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "srcSchemeCode",
+									"value": "001"
+								},
+								{
+									"key": "tarSchemeCode",
+									"value": "046"
+								},
+								{
+									"key": "dividendOption",
+									"value": "R"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "F"
+								},
+								{
+									"key": "txnVolume",
+									"value": "1000"
+								},
+								{
+									"key": "frequency",
+									"value": "D"
+								},
+								{
+									"key": "day",
+									"value": "NA"
+								},
+								{
+									"key": "start_Month",
+									"value": "02"
+								},
+								{
+									"key": "start_Year",
+									"value": "2024"
+								},
+								{
+									"key": "end_Month",
+									"value": "12"
+								},
+								{
+									"key": "end_Year",
+									"value": "2024"
+								},
+								{
+									"key": "euinDeclaration",
+									"value": "Y"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Switch (Direct Schemes - with ARN/Sub-ARN/EUIN)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/SwitchAndStpTxnAction.do?sendResponseFormat=JSON&sessioncontext=223474000013ED8E00&sendersubid=22347400001&logTp=A&versionNo=2.0&txnType=S&orderMode=Z&tranSource=E&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=14157AZA01&jointHolderFlag=N&holderDetail&directFlag=N&arnType=&arnCode=195775&subBrkArnLabel=ARN-&subBrkArnType=&subBrkArnCode=&subBrokCode=&euincode=E249588&depositoryFlag=N&dpType=&invDpAccNo=&noOfSchemes=2&recordNo=1&extUniqueRefId=123451&folioAccNo=ARMFN001&folioCheckDigit=&rtaAmcCode=FTI&srcSchemeCode=001&tarSchemeCode=046&dividendOption=R&txnVolumeType=U&txnVolume=10&recordNo=2&extUniqueRefId=123451&folioAccNo=18314548&folioCheckDigit=&rtaAmcCode=FTI&srcSchemeCode=414&tarSchemeCode=304&dividendOption=N&txnVolumeType=U&txnVolume=10&euinDeclaration=N",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"SwitchAndStpTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "223474000013ED8E00"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "versionNo",
+									"value": "2.0"
+								},
+								{
+									"key": "txnType",
+									"value": "S"
+								},
+								{
+									"key": "orderMode",
+									"value": "Z"
+								},
+								{
+									"key": "tranSource",
+									"value": "E"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "can",
+									"value": "14157AZA01"
+								},
+								{
+									"key": "jointHolderFlag",
+									"value": "N"
+								},
+								{
+									"key": "holderDetail",
+									"value": null
+								},
+								{
+									"key": "directFlag",
+									"value": "N"
+								},
+								{
+									"key": "arnType",
+									"value": ""
+								},
+								{
+									"key": "arnCode",
+									"value": "195775"
+								},
+								{
+									"key": "subBrkArnLabel",
+									"value": "ARN-"
+								},
+								{
+									"key": "subBrkArnType",
+									"value": ""
+								},
+								{
+									"key": "subBrkArnCode",
+									"value": ""
+								},
+								{
+									"key": "subBrokCode",
+									"value": ""
+								},
+								{
+									"key": "branchRMInternalCode",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "euincode",
+									"value": "E249588"
+								},
+								{
+									"key": "depositoryFlag",
+									"value": "N"
+								},
+								{
+									"key": "dpType",
+									"value": ""
+								},
+								{
+									"key": "invDpAccNo",
+									"value": ""
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "2"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "ARMFN001"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "srcSchemeCode",
+									"value": "001"
+								},
+								{
+									"key": "tarSchemeCode",
+									"value": "046"
+								},
+								{
+									"key": "dividendOption",
+									"value": "R"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "U"
+								},
+								{
+									"key": "txnVolume",
+									"value": "10"
+								},
+								{
+									"key": "recordNo",
+									"value": "2"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "18314548"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "srcSchemeCode",
+									"value": "414"
+								},
+								{
+									"key": "tarSchemeCode",
+									"value": "304"
+								},
+								{
+									"key": "dividendOption",
+									"value": "N"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "U"
+								},
+								{
+									"key": "txnVolume",
+									"value": "10"
+								},
+								{
+									"key": "euinDeclaration",
+									"value": "N"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Can Modifications",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<CANIndFillEezzReq xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"CANIndFillEezzReq.xsd\">\n    <REQ_HEADER>\n      <ENTITY_ID>40007K</ENTITY_ID>\n      <UNIQUE_ID></UNIQUE_ID>\n      <REQUEST_TYPE>CANINDREG</REQUEST_TYPE>\n      <LOG_USER_ID>EASYINVUAT</LOG_USER_ID>\n      <EN_ENCR_PASSWORD>T7BO43drYUA0WrCASXo75g==</EN_ENCR_PASSWORD>\n      <VERSION_NO>1.00</VERSION_NO>\n      <TIMESTAMP>2023-01-10T11:15:30</TIMESTAMP>\n    </REQ_HEADER>\n    <REQ_BODY>\n      <REQ_EVENT>CM</REQ_EVENT>\n      <!-- CR - CAN CREATION EVENT , CM  CAN Modification Event-->\n      <CAN>31022KM002</CAN>\n      <!--  Only for CAN Modification -->\n      <REG_TYPE>E</REG_TYPE>\n      <PROOF_UPLOAD_BY_CAN></PROOF_UPLOAD_BY_CAN>\n      <ENABLE_ONLINE_ACCESS_FLAG></ENABLE_ONLINE_ACCESS_FLAG>\n      <!--  Y-YES ,N - NO -->\n      <ENTITY_EMAIL_DETAILS>\n          <EMAIL_ID></EMAIL_ID>\n          <EMAIL_ID></EMAIL_ID>\n      </ENTITY_EMAIL_DETAILS>\n      <HOLDING_TYPE>SI</HOLDING_TYPE>\n      <INV_CATEGORY>I</INV_CATEGORY>\n      \n      <TAX_STATUS>RI</TAX_STATUS>\n      \n      <HOLDER_COUNT>1</HOLDER_COUNT>\n      <HOLDER_RECORDS>\n        <HOLDER_RECORD>\n          <HOLDER_TYPE>PR</HOLDER_TYPE>\n            <!-- PR,SE,TH,GU -->\n            <NAME></NAME>\n            <DOB></DOB>\n            <PAN_EXEMPT_FLAG></PAN_EXEMPT_FLAG>\n            <PAN_PEKRN_NO>ATUPJ0917F</PAN_PEKRN_NO>\n            <AADHAAR_NO></AADHAAR_NO>\n            <!-- As of version 5.5 of eCAN specification, this should be blank always. -->\n            <RELATIONSHIP></RELATIONSHIP>\n            <!-- Applicable only for Gaurdian Holder -->\n            <REL_PROOF></REL_PROOF>\n            <!-- Applicable only for Gaurdian Holder -->\n            <FATCA_DETAIL>\n              <BIRTH_CITY>DELHI</BIRTH_CITY>\n              <BIRTH_COUNTRY>101</BIRTH_COUNTRY>\n              <BIRTH_COUNTRY_OTH></BIRTH_COUNTRY_OTH>\n              <CITIZENSHIP>101</CITIZENSHIP>\n              <CITIZENSHIP_OTH></CITIZENSHIP_OTH>\n              <NATIONALITY>101</NATIONALITY>\n              <NATIONALITY_OTH></NATIONALITY_OTH>\n              <TAX_RES_FLAG>Y</TAX_RES_FLAG>\n              <TAXS_RECORDS>\n                <!--Multiple Record-->\n                \n                <TAX_RECORD>\n                    <SEQ_NUM>1</SEQ_NUM>\n                    <TAX_COUNTRY>111</TAX_COUNTRY>\n                    <TAX_COUNTRY_OTH></TAX_COUNTRY_OTH>\n                    <TAX_REF_NO>124</TAX_REF_NO>\n                    <IDENTI_TYPE>A</IDENTI_TYPE>\n                    <IDENTI_TYPE_OTH></IDENTI_TYPE_OTH>\n                </TAX_RECORD>\n                <TAX_RECORD>\n                    <SEQ_NUM>2</SEQ_NUM>\n                    <TAX_COUNTRY>110</TAX_COUNTRY>\n                    <TAX_COUNTRY_OTH></TAX_COUNTRY_OTH>\n                    <TAX_REF_NO>124</TAX_REF_NO>\n                    <IDENTI_TYPE>A</IDENTI_TYPE>\n                    <IDENTI_TYPE_OTH></IDENTI_TYPE_OTH>\n                </TAX_RECORD>\n              </TAXS_RECORDS>\n            </FATCA_DETAIL>\n           \n        </HOLDER_RECORD>\n      </HOLDER_RECORDS>\n      <ARN_DETAILS>\n      <!--  RIA Code need to add -->\n      <ARN_NO></ARN_NO>\n      <RIA_CODE></RIA_CODE>\n      <!-- RIA Code -->\n      <EUIN_CODE></EUIN_CODE>\n      </ARN_DETAILS>\n      <NOMINEE_DETAIL>\n        <NOM_DECL_LVL>C</NOM_DECL_LVL>\n        <NOMIN_OPT_FLAG>N</NOMIN_OPT_FLAG>\n        <NOM_VERIFY_TYPE>E</NOM_VERIFY_TYPE>\n        <NOMINEES_RECORDS>\n            <NOMINEE_RECORD>\n                <SEQ_NUM>1</SEQ_NUM>\n                <NOMINEE_NAME>Sanjay</NOMINEE_NAME>\n                <RELATION>Brother</RELATION>\n                <PERCENTAGE>10</PERCENTAGE>\n                <DOB>1998-04-11</DOB>\n                <NOM_GURI_NAME></NOM_GURI_NAME>\n                <NOM_GURI_REL></NOM_GURI_REL>\n                <NOM_GURI_DOB></NOM_GURI_DOB>\n            </NOMINEE_RECORD>\n        </NOMINEES_RECORDS>\n      </NOMINEE_DETAIL>\n    </REQ_BODY>\n  </CANIndFillEezzReq>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://14.141.212.169:4091/MFUCanFillEezzService",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"MFUCanFillEezzService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Can Data Status for exception",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<CANDataStatusReq xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n        xsi:noNamespaceSchemaLocation=\"CANDataStatusReq.xsd\">\n        <REQ_HEADER>\n                <ENTITY_ID>MFU</ENTITY_ID>\n                <UNIQUE_ID></UNIQUE_ID>\n                <REQUEST_TYPE>CANDATASTATUS</REQUEST_TYPE>\n                <LOG_USER_ID></LOG_USER_ID>\n                <EN_ENCR_PASSWORD></EN_ENCR_PASSWORD>\n                <VERSION_NO>1.00</VERSION_NO>\n                <TIMESTAMP>2016-03-10T11:15:30</TIMESTAMP>\n        </REQ_HEADER>\n        <REQ_BODY>\n                <CAN>31018KM001</CAN>\n        </REQ_BODY>\n</CANDataStatusReq>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://14.141.212.169:4091/MFUCanFillEezzService",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"MFUCanFillEezzService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "can_creation_Joint",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<CANIndFillEezzReq xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"CANIndFillEezzReq.xsd\">\n  <REQ_HEADER>\n    <ENTITY_ID>40007K</ENTITY_ID>\n    <UNIQUE_ID>2</UNIQUE_ID>\n    <REQUEST_TYPE>CANINDREG</REQUEST_TYPE>\n    <LOG_USER_ID>EASYINVUAT</LOG_USER_ID>\n    <EN_ENCR_PASSWORD>T7BO43drYUA0WrCASXo75g==</EN_ENCR_PASSWORD>\n    <VERSION_NO>1.00</VERSION_NO>\n    <TIMESTAMP>2023-01-10T11:15:30</TIMESTAMP>\n  </REQ_HEADER>\n  <REQ_BODY>\n    <REQ_EVENT>CR</REQ_EVENT>\n    <!-- CR - CAN CREATION EVENT , CM  CAN Modification Event-->\n    <CAN></CAN>\n    <!--  Only for CAN Modification -->\n    <REG_TYPE>E</REG_TYPE>\n    <!--  Physical,Electronic (P,E) -->\n    <PROOF_UPLOAD_BY_CAN>N</PROOF_UPLOAD_BY_CAN>\n    <!--  Y-YES ,N - NO -->\n    <ENABLE_ONLINE_ACCESS_FLAG>Y</ENABLE_ONLINE_ACCESS_FLAG>\n    <!--  Y-YES ,N - NO -->\n    <ENTITY_EMAIL_DETAILS>\n      <EMAIL_ID>test@gmail.com</EMAIL_ID>\n      <EMAIL_ID></EMAIL_ID>\n    </ENTITY_EMAIL_DETAILS>\n    <HOLDING_TYPE>JO</HOLDING_TYPE>\n    <INV_CATEGORY>I</INV_CATEGORY>\n    <TAX_STATUS>RI</TAX_STATUS>\n    <HOLDER_COUNT>2</HOLDER_COUNT>\n    <HOLDER_RECORDS>\n      <HOLDER_RECORD>\n        <HOLDER_TYPE>PR</HOLDER_TYPE>\n        <!-- PR,SE,TH,GU -->\n        <NAME>Himanchal Tiwari</NAME>\n        <DOB>1985-11-29</DOB>\n        <PAN_EXEMPT_FLAG>N</PAN_EXEMPT_FLAG>\n        <PAN_PEKRN_NO>AUPPT6925Q</PAN_PEKRN_NO>\n        <AADHAAR_NO></AADHAAR_NO>\n        <!-- As of version 5.5 of eCAN specification, this should be blank always. -->\n        <RELATIONSHIP></RELATIONSHIP>\n        <!-- Applicable only for Gaurdian Holder -->\n        <REL_PROOF></REL_PROOF>\n        <!-- Applicable only for Gaurdian Holder -->\n        <CONTACT_DETAIL>\n          <RES_ISD></RES_ISD>\n          <RES_STD></RES_STD>\n          <RES_PHONE_NO></RES_PHONE_NO>\n          <MOB_ISD_CODE></MOB_ISD_CODE>\n          <PRI_MOB_NO>1234567890</PRI_MOB_NO>\n          \n          <!--  S-SELF,F-FAMILY -->\n          <ALT_MOB_NO></ALT_MOB_NO>\n          <OFF_ISD></OFF_ISD>\n          <OFF_STD></OFF_STD>\n          <OFF_PHONE_NO></OFF_PHONE_NO>\n          <PRI_EMAIL>test@gmail.com</PRI_EMAIL>\n          \n          <!--  S-SELF,F-FAMILY -->\n          <ALT_EMAIL></ALT_EMAIL>\n        </CONTACT_DETAIL>\n        <OTHER_DETAIL>\n          <GROSS_INCOME></GROSS_INCOME>\n          <NET_WORTH></NET_WORTH>\n          <NET_DATE></NET_DATE>\n          <SOURCE_OF_WEALTH></SOURCE_OF_WEALTH>\n          <SOURCE_OF_WEALTH_OTH></SOURCE_OF_WEALTH_OTH>\n          <KRA_ADDR_TYPE>2</KRA_ADDR_TYPE>\n          <OCCUPATION>1</OCCUPATION>\n          <OCCUPATION_OTH></OCCUPATION_OTH>\n          <PEP>NA</PEP>\n          <ANY_OTH_INFO></ANY_OTH_INFO>\n        </OTHER_DETAIL>\n        <FATCA_DETAIL>\n          <BIRTH_CITY>Mumbai</BIRTH_CITY>\n          <BIRTH_COUNTRY>101</BIRTH_COUNTRY>\n          <BIRTH_COUNTRY_OTH></BIRTH_COUNTRY_OTH>\n          <CITIZENSHIP>101</CITIZENSHIP>\n          <CITIZENSHIP_OTH></CITIZENSHIP_OTH>\n          <NATIONALITY>101</NATIONALITY>\n          <NATIONALITY_OTH></NATIONALITY_OTH>\n          <TAX_RES_FLAG>N</TAX_RES_FLAG>\n          <TAXS_RECORDS>\n            <!--Multiple Record-->\n            <TAX_RECORD>\n              <SEQ_NUM></SEQ_NUM>\n              <TAX_COUNTRY></TAX_COUNTRY>\n              <TAX_COUNTRY_OTH></TAX_COUNTRY_OTH>\n              <TAX_REF_NO></TAX_REF_NO>\n              <IDENTI_TYPE></IDENTI_TYPE>\n              <IDENTI_TYPE_OTH></IDENTI_TYPE_OTH>\n            </TAX_RECORD>\n          </TAXS_RECORDS>\n        </FATCA_DETAIL>\n      </HOLDER_RECORD>\n      \n      <HOLDER_RECORD>\n        <HOLDER_TYPE>SE</HOLDER_TYPE>\n        <!-- PR,SE,TH,GU -->\n        <NAME>Divya Kothari</NAME>\n        <DOB>2000-12-06</DOB>\n        <PAN_EXEMPT_FLAG>N</PAN_EXEMPT_FLAG>\n        <PAN_PEKRN_NO>ITCPK0484F</PAN_PEKRN_NO>\n        <AADHAAR_NO></AADHAAR_NO>\n        <!-- As of version 5.5 of eCAN specification, this should be blank always. -->\n        <RELATIONSHIP>01</RELATIONSHIP>\n        <!-- Applicable only for Gaurdian Holder -->\n        <REL_PROOF>01</REL_PROOF>\n        <!-- Applicable only for Gaurdian Holder -->\n        <CONTACT_DETAIL>\n          <RES_ISD></RES_ISD>\n          <RES_STD></RES_STD>\n          <RES_PHONE_NO></RES_PHONE_NO>\n          <MOB_ISD_CODE></MOB_ISD_CODE>\n          <PRI_MOB_NO>1234567891</PRI_MOB_NO>\n          \n          <!--  S-SELF,F-FAMILY -->\n          <ALT_MOB_NO></ALT_MOB_NO>\n          <OFF_ISD></OFF_ISD>\n          <OFF_STD></OFF_STD>\n          <OFF_PHONE_NO></OFF_PHONE_NO>\n          <PRI_EMAIL>test1@gmail.com</PRI_EMAIL>\n          \n          <!--  S-SELF,F-FAMILY -->\n          <ALT_EMAIL></ALT_EMAIL>\n        </CONTACT_DETAIL>\n        <OTHER_DETAIL>\n          <GROSS_INCOME></GROSS_INCOME>\n          <NET_WORTH></NET_WORTH>\n          <NET_DATE></NET_DATE>\n          <SOURCE_OF_WEALTH></SOURCE_OF_WEALTH>\n          <SOURCE_OF_WEALTH_OTH></SOURCE_OF_WEALTH_OTH>\n          <KRA_ADDR_TYPE>2</KRA_ADDR_TYPE>\n          <OCCUPATION>07</OCCUPATION>\n          <OCCUPATION_OTH></OCCUPATION_OTH>\n          <PEP>NA</PEP>\n          <ANY_OTH_INFO></ANY_OTH_INFO>\n        </OTHER_DETAIL>\n        <FATCA_DETAIL>\n          <BIRTH_CITY>Mumbai</BIRTH_CITY>\n          <BIRTH_COUNTRY>101</BIRTH_COUNTRY>\n          <BIRTH_COUNTRY_OTH></BIRTH_COUNTRY_OTH>\n          <CITIZENSHIP>101</CITIZENSHIP>\n          <CITIZENSHIP_OTH></CITIZENSHIP_OTH>\n          <NATIONALITY>101</NATIONALITY>\n          <NATIONALITY_OTH></NATIONALITY_OTH>\n          <TAX_RES_FLAG>N</TAX_RES_FLAG>\n          <TAXS_RECORDS>\n            <!--Multiple Record-->\n            <TAX_RECORD>\n              <SEQ_NUM></SEQ_NUM>\n              <TAX_COUNTRY></TAX_COUNTRY>\n              <TAX_COUNTRY_OTH></TAX_COUNTRY_OTH>\n              <TAX_REF_NO></TAX_REF_NO>\n              <IDENTI_TYPE></IDENTI_TYPE>\n              <IDENTI_TYPE_OTH></IDENTI_TYPE_OTH>\n            </TAX_RECORD>\n          </TAXS_RECORDS>\n        </FATCA_DETAIL>\n      </HOLDER_RECORD>\n    </HOLDER_RECORDS>\n    <ARN_DETAILS>\n      <!--  RIA Code need to add -->\n      <ARN_NO></ARN_NO>\n      <RIA_CODE></RIA_CODE>\n      <!-- RIA Code -->\n      <EUIN_CODE></EUIN_CODE>\n    </ARN_DETAILS>\n    <BANK_DETAILS>\n      <!--Multiple Record-->\n      <BANK_RECORD>\n        <SEQ_NUM>1</SEQ_NUM>\n        <DEFAULT_ACC_FLAG>Y</DEFAULT_ACC_FLAG>\n        <ACCOUNT_NO>1234656789</ACCOUNT_NO>\n        <ACCOUNT_TYPE>SB</ACCOUNT_TYPE>\n        <BANK_ID>065</BANK_ID>\n        <MICR_CODE>400065002</MICR_CODE>\n        <IFSC_CODE>ABHY0065002</IFSC_CODE>\n        <PROOF>14</PROOF>\n      </BANK_RECORD>\n    </BANK_DETAILS>\n    <NOMINEE_DETAILS>\n      <NOM_DECL_LVL>C</NOM_DECL_LVL>\n      <NOMIN_OPT_FLAG>N</NOMIN_OPT_FLAG>\n      <NOM_VERIFY_TYPE>E</NOM_VERIFY_TYPE>\n      <NOMINEES_RECORDS>\n      </NOMINEES_RECORDS>\n    </NOMINEE_DETAILS>\n  </REQ_BODY>\n</CANIndFillEezzReq>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://14.141.212.169:4091/MFUCanFillEezzService",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"MFUCanFillEezzService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "can_creation_Anyone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<CANIndFillEezzReq xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"CANIndFillEezzReq.xsd\">\n  <REQ_HEADER>\n    <ENTITY_ID>40007K</ENTITY_ID>\n    <UNIQUE_ID>2</UNIQUE_ID>\n    <REQUEST_TYPE>CANINDREG</REQUEST_TYPE>\n    <LOG_USER_ID>EASYINVUAT</LOG_USER_ID>\n    <EN_ENCR_PASSWORD>T7BO43drYUA0WrCASXo75g==</EN_ENCR_PASSWORD>\n    <VERSION_NO>1.00</VERSION_NO>\n    <TIMESTAMP>2023-01-10T11:15:30</TIMESTAMP>\n  </REQ_HEADER>\n  <REQ_BODY>\n    <REQ_EVENT>CR</REQ_EVENT>\n    <!-- CR - CAN CREATION EVENT , CM  CAN Modification Event-->\n    <CAN></CAN>\n    <!--  Only for CAN Modification -->\n    <REG_TYPE>E</REG_TYPE>\n    <!--  Physical,Electronic (P,E) -->\n    <PROOF_UPLOAD_BY_CAN>N</PROOF_UPLOAD_BY_CAN>\n    <!--  Y-YES ,N - NO -->\n    <ENABLE_ONLINE_ACCESS_FLAG>Y</ENABLE_ONLINE_ACCESS_FLAG>\n    <!--  Y-YES ,N - NO -->\n    <ENTITY_EMAIL_DETAILS>\n      <EMAIL_ID>test@gmail.com</EMAIL_ID>\n      <EMAIL_ID></EMAIL_ID>\n    </ENTITY_EMAIL_DETAILS>\n    <HOLDING_TYPE>AS</HOLDING_TYPE>\n    <INV_CATEGORY>I</INV_CATEGORY>\n    <TAX_STATUS>RI</TAX_STATUS>\n    <HOLDER_COUNT>2</HOLDER_COUNT>\n    <HOLDER_RECORDS>\n      <HOLDER_RECORD>\n        <HOLDER_TYPE>PR</HOLDER_TYPE>\n        <!-- PR,SE,TH,GU -->\n        <NAME>Meena</NAME>\n        <DOB>1985-11-29</DOB>\n        <PAN_EXEMPT_FLAG>N</PAN_EXEMPT_FLAG>\n        <PAN_PEKRN_NO>ESKPS8994H</PAN_PEKRN_NO>\n        <AADHAAR_NO></AADHAAR_NO>\n        <!-- As of version 5.5 of eCAN specification, this should be blank always. -->\n        <RELATIONSHIP></RELATIONSHIP>\n        <!-- Applicable only for Gaurdian Holder -->\n        <REL_PROOF></REL_PROOF>\n        <!-- Applicable only for Gaurdian Holder -->\n        <CONTACT_DETAIL>\n          <RES_ISD></RES_ISD>\n          <RES_STD></RES_STD>\n          <RES_PHONE_NO></RES_PHONE_NO>\n          <MOB_ISD_CODE></MOB_ISD_CODE>\n          <PRI_MOB_NO>1234567890</PRI_MOB_NO>\n\n          <!--  S-SELF,F-FAMILY -->\n          <ALT_MOB_NO></ALT_MOB_NO>\n          <OFF_ISD></OFF_ISD>\n          <OFF_STD></OFF_STD>\n          <OFF_PHONE_NO></OFF_PHONE_NO>\n          <PRI_EMAIL>meena@gmail.com</PRI_EMAIL>\n          \n          <!--  S-SELF,F-FAMILY -->\n          <ALT_EMAIL></ALT_EMAIL>\n        </CONTACT_DETAIL>\n        <OTHER_DETAIL>\n            <GROSS_INCOME>01</GROSS_INCOME>\n            <NET_WORTH></NET_WORTH>\n            <NET_DATE></NET_DATE>\n            <SOURCE_OF_WEALTH>01</SOURCE_OF_WEALTH>\n            <SOURCE_OF_WEALTH_OTH></SOURCE_OF_WEALTH_OTH>\n            <KRA_ADDR_TYPE>1</KRA_ADDR_TYPE>\n            <OCCUPATION>01</OCCUPATION>\n            <OCCUPATION_OTH></OCCUPATION_OTH>\n            <PEP>NA</PEP>\n            <ANY_OTH_INFO></ANY_OTH_INFO>\n        </OTHER_DETAIL>\n        <FATCA_DETAIL>\n          <BIRTH_CITY>Mumbai</BIRTH_CITY>\n          <BIRTH_COUNTRY>101</BIRTH_COUNTRY>\n          <BIRTH_COUNTRY_OTH></BIRTH_COUNTRY_OTH>\n          <CITIZENSHIP>101</CITIZENSHIP>\n          <CITIZENSHIP_OTH></CITIZENSHIP_OTH>\n          <NATIONALITY>101</NATIONALITY>\n          <NATIONALITY_OTH></NATIONALITY_OTH>\n          <TAX_RES_FLAG>N</TAX_RES_FLAG>\n          <TAXS_RECORDS>\n            <!--Multiple Record-->\n            <TAX_RECORD>\n              <SEQ_NUM></SEQ_NUM>\n              <TAX_COUNTRY></TAX_COUNTRY>\n              <TAX_COUNTRY_OTH></TAX_COUNTRY_OTH>\n              <TAX_REF_NO></TAX_REF_NO>\n              <IDENTI_TYPE></IDENTI_TYPE>\n              <IDENTI_TYPE_OTH></IDENTI_TYPE_OTH>\n            </TAX_RECORD>\n          </TAXS_RECORDS>\n        </FATCA_DETAIL>\n      </HOLDER_RECORD>\n      <HOLDER_RECORD>\n        <HOLDER_TYPE>SE</HOLDER_TYPE>\n        <!-- PR,SE,TH,GU -->\n        <NAME>Ashi Singh</NAME>\n        <DOB>1998-04-14</DOB>\n        <PAN_EXEMPT_FLAG>N</PAN_EXEMPT_FLAG>\n        <PAN_PEKRN_NO>FHJPS7431C</PAN_PEKRN_NO>\n        <AADHAAR_NO></AADHAAR_NO>\n        <!-- As of version 5.5 of eCAN specification, this should be blank always. -->\n        <RELATIONSHIP></RELATIONSHIP>\n        <!-- Applicable only for Gaurdian Holder -->\n        <REL_PROOF></REL_PROOF>\n        <!-- Applicable only for Gaurdian Holder -->\n        <CONTACT_DETAIL>\n          <RES_ISD></RES_ISD>\n          <RES_STD></RES_STD>\n          <RES_PHONE_NO></RES_PHONE_NO>\n          <MOB_ISD_CODE></MOB_ISD_CODE>\n          <PRI_MOB_NO>1234567891</PRI_MOB_NO>\n          <!--  S-SELF,F-FAMILY -->\n          <ALT_MOB_NO></ALT_MOB_NO>\n          <OFF_ISD></OFF_ISD>\n          <OFF_STD></OFF_STD>\n          <OFF_PHONE_NO></OFF_PHONE_NO>\n          <PRI_EMAIL>test1@gmail.com</PRI_EMAIL>\n          <!--  S-SELF,F-FAMILY -->\n          <ALT_EMAIL></ALT_EMAIL>\n        </CONTACT_DETAIL>\n        <OTHER_DETAIL>\n              <GROSS_INCOME>01</GROSS_INCOME>\n              <NET_WORTH></NET_WORTH>\n              <NET_DATE></NET_DATE>\n              <SOURCE_OF_WEALTH>01</SOURCE_OF_WEALTH>\n              <SOURCE_OF_WEALTH_OTH></SOURCE_OF_WEALTH_OTH>\n              <KRA_ADDR_TYPE>1</KRA_ADDR_TYPE>\n              <OCCUPATION>01</OCCUPATION>\n              <OCCUPATION_OTH></OCCUPATION_OTH>\n              <PEP>NA</PEP>\n              <ANY_OTH_INFO></ANY_OTH_INFO>\n        </OTHER_DETAIL>\n        <FATCA_DETAIL>\n          <BIRTH_CITY>Mumbai</BIRTH_CITY>\n          <BIRTH_COUNTRY>101</BIRTH_COUNTRY>\n          <BIRTH_COUNTRY_OTH></BIRTH_COUNTRY_OTH>\n          <CITIZENSHIP>101</CITIZENSHIP>\n          <CITIZENSHIP_OTH></CITIZENSHIP_OTH>\n          <NATIONALITY>101</NATIONALITY>\n          <NATIONALITY_OTH></NATIONALITY_OTH>\n          <TAX_RES_FLAG>N</TAX_RES_FLAG>\n          <TAXS_RECORDS>\n            <!--Multiple Record-->\n            <TAX_RECORD>\n              <SEQ_NUM></SEQ_NUM>\n              <TAX_COUNTRY></TAX_COUNTRY>\n              <TAX_COUNTRY_OTH></TAX_COUNTRY_OTH>\n              <TAX_REF_NO></TAX_REF_NO>\n              <IDENTI_TYPE></IDENTI_TYPE>\n              <IDENTI_TYPE_OTH></IDENTI_TYPE_OTH>\n            </TAX_RECORD>\n          </TAXS_RECORDS>\n        </FATCA_DETAIL>\n      </HOLDER_RECORD>\n    </HOLDER_RECORDS>\n    <ARN_DETAILS>\n      <!--  RIA Code need to add -->\n      <ARN_NO></ARN_NO>\n      <RIA_CODE></RIA_CODE>\n      <!-- RIA Code -->\n      <EUIN_CODE></EUIN_CODE>\n    </ARN_DETAILS>\n    <BANK_DETAILS>\n      <!--Multiple Record-->\n      <BANK_RECORD>\n        <SEQ_NUM>1</SEQ_NUM>\n        <DEFAULT_ACC_FLAG>Y</DEFAULT_ACC_FLAG>\n        <ACCOUNT_NO>1234656789</ACCOUNT_NO>\n        <ACCOUNT_TYPE>SB</ACCOUNT_TYPE>\n        <BANK_ID>065</BANK_ID>\n        <MICR_CODE>400065002</MICR_CODE>\n        <IFSC_CODE>ABHY0065002</IFSC_CODE>\n        <PROOF>14</PROOF>\n      </BANK_RECORD>\n    </BANK_DETAILS>\n    <NOMINEE_DETAILS>\n      <NOM_DECL_LVL>C</NOM_DECL_LVL>\n      <NOMIN_OPT_FLAG>N</NOMIN_OPT_FLAG>\n      <NOM_VERIFY_TYPE>E</NOM_VERIFY_TYPE>\n      <NOMINEES_RECORDS>\n      </NOMINEES_RECORDS>\n    </NOMINEE_DETAILS>\n  </REQ_BODY>\n</CANIndFillEezzReq>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://14.141.212.169:4091/MFUCanFillEezzService",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"MFUCanFillEezzService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Can Modification Joint",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<CANIndFillEezzReq xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"CANIndFillEezzReq.xsd\">\n    <REQ_HEADER>\n      <ENTITY_ID>40007K</ENTITY_ID>\n      <UNIQUE_ID></UNIQUE_ID>\n      <REQUEST_TYPE>CANINDREG</REQUEST_TYPE>\n      <LOG_USER_ID>EASYINVUAT</LOG_USER_ID>\n      <EN_ENCR_PASSWORD>T7BO43drYUA0WrCASXo75g==</EN_ENCR_PASSWORD>\n      <VERSION_NO>1.00</VERSION_NO>\n      <TIMESTAMP>2023-01-10T11:15:30</TIMESTAMP>\n    </REQ_HEADER>\n    <REQ_BODY>\n    <REQ_EVENT>CM</REQ_EVENT>\n    <!-- CR - CAN CREATION EVENT , CM  CAN Modification Event-->\n    <CAN>31058KM001</CAN>\n    <!--  Only for CAN Modification -->\n    <REG_TYPE>E</REG_TYPE>\n    <!--  Physical,Electronic (P,E) -->\n    <PROOF_UPLOAD_BY_CAN>N</PROOF_UPLOAD_BY_CAN>\n    <!--  Y-YES ,N - NO -->\n    <ENABLE_ONLINE_ACCESS_FLAG>Y</ENABLE_ONLINE_ACCESS_FLAG>\n    <!--  Y-YES ,N - NO -->\n    <ENTITY_EMAIL_DETAILS>\n      <EMAIL_ID>test@gmail.com</EMAIL_ID>\n      <EMAIL_ID></EMAIL_ID>\n    </ENTITY_EMAIL_DETAILS>\n    <HOLDING_TYPE>JO</HOLDING_TYPE>\n    <INV_CATEGORY>I</INV_CATEGORY>\n    <TAX_STATUS>RI</TAX_STATUS>\n    <HOLDER_COUNT>2</HOLDER_COUNT>\n    <HOLDER_RECORDS>\n      <HOLDER_RECORD>\n        <HOLDER_TYPE>PR</HOLDER_TYPE>\n        <!-- PR,SE,TH,GU -->\n        <NAME>Himanchal Tiwari</NAME>\n        <DOB>1985-11-29</DOB>\n        <PAN_EXEMPT_FLAG>N</PAN_EXEMPT_FLAG>\n        <PAN_PEKRN_NO>AUPPT6925Q</PAN_PEKRN_NO>\n        <AADHAAR_NO></AADHAAR_NO>\n        <!-- As of version 5.5 of eCAN specification, this should be blank always. -->\n        <RELATIONSHIP></RELATIONSHIP>\n        <!-- Applicable only for Gaurdian Holder -->\n        <REL_PROOF></REL_PROOF>\n        <!-- Applicable only for Gaurdian Holder -->\n        <CONTACT_DETAIL>\n          <RES_ISD></RES_ISD>\n          <RES_STD></RES_STD>\n          <RES_PHONE_NO></RES_PHONE_NO>\n          <MOB_ISD_CODE></MOB_ISD_CODE>\n          <PRI_MOB_NO>1234567890</PRI_MOB_NO>\n          \n          <!--  S-SELF,F-FAMILY -->\n          <ALT_MOB_NO></ALT_MOB_NO>\n          <OFF_ISD></OFF_ISD>\n          <OFF_STD></OFF_STD>\n          <OFF_PHONE_NO></OFF_PHONE_NO>\n          <PRI_EMAIL>test@gmail.com</PRI_EMAIL>\n          \n          <!--  S-SELF,F-FAMILY -->\n          <ALT_EMAIL></ALT_EMAIL>\n        </CONTACT_DETAIL>\n        <OTHER_DETAIL>\n              <GROSS_INCOME>01</GROSS_INCOME>\n              <NET_WORTH></NET_WORTH>\n              <NET_DATE></NET_DATE>\n              <SOURCE_OF_WEALTH>01</SOURCE_OF_WEALTH>\n              <SOURCE_OF_WEALTH_OTH></SOURCE_OF_WEALTH_OTH>\n              <KRA_ADDR_TYPE>1</KRA_ADDR_TYPE>\n              <OCCUPATION>01</OCCUPATION>\n              <OCCUPATION_OTH></OCCUPATION_OTH>\n              <PEP>NA</PEP>\n              <ANY_OTH_INFO></ANY_OTH_INFO>\n        </OTHER_DETAIL>\n        <FATCA_DETAIL>\n          <BIRTH_CITY>Mumbai</BIRTH_CITY>\n          <BIRTH_COUNTRY>101</BIRTH_COUNTRY>\n          <BIRTH_COUNTRY_OTH></BIRTH_COUNTRY_OTH>\n          <CITIZENSHIP>101</CITIZENSHIP>\n          <CITIZENSHIP_OTH></CITIZENSHIP_OTH>\n          <NATIONALITY>101</NATIONALITY>\n          <NATIONALITY_OTH></NATIONALITY_OTH>\n          <TAX_RES_FLAG>N</TAX_RES_FLAG>\n          <TAXS_RECORDS>\n            <!--Multiple Record-->\n            <TAX_RECORD>\n              <SEQ_NUM></SEQ_NUM>\n              <TAX_COUNTRY></TAX_COUNTRY>\n              <TAX_COUNTRY_OTH></TAX_COUNTRY_OTH>\n              <TAX_REF_NO></TAX_REF_NO>\n              <IDENTI_TYPE></IDENTI_TYPE>\n              <IDENTI_TYPE_OTH></IDENTI_TYPE_OTH>\n            </TAX_RECORD>\n          </TAXS_RECORDS>\n        </FATCA_DETAIL>\n      </HOLDER_RECORD>\n      \n      <HOLDER_RECORD>\n        <HOLDER_TYPE>SE</HOLDER_TYPE>\n        <!-- PR,SE,TH,GU -->\n        <NAME>Divya Kothari</NAME>\n        <DOB>2000-12-06</DOB>\n        <PAN_EXEMPT_FLAG>N</PAN_EXEMPT_FLAG>\n        <PAN_PEKRN_NO>ITCPK0484F</PAN_PEKRN_NO>\n        <AADHAAR_NO></AADHAAR_NO>\n        <!-- As of version 5.5 of eCAN specification, this should be blank always. -->\n        <RELATIONSHIP>01</RELATIONSHIP>\n        <!-- Applicable only for Gaurdian Holder -->\n        <REL_PROOF>01</REL_PROOF>\n        <!-- Applicable only for Gaurdian Holder -->\n        <CONTACT_DETAIL>\n          <RES_ISD></RES_ISD>\n          <RES_STD></RES_STD>\n          <RES_PHONE_NO></RES_PHONE_NO>\n          <MOB_ISD_CODE></MOB_ISD_CODE>\n          <PRI_MOB_NO>1234567891</PRI_MOB_NO>\n          \n          <!--  S-SELF,F-FAMILY -->\n          <ALT_MOB_NO></ALT_MOB_NO>\n          <OFF_ISD></OFF_ISD>\n          <OFF_STD></OFF_STD>\n          <OFF_PHONE_NO></OFF_PHONE_NO>\n          <PRI_EMAIL>test1@gmail.com</PRI_EMAIL>\n          \n          <!--  S-SELF,F-FAMILY -->\n          <ALT_EMAIL></ALT_EMAIL>\n        </CONTACT_DETAIL>\n       <OTHER_DETAIL>\n            <GROSS_INCOME>01</GROSS_INCOME>\n            <NET_WORTH></NET_WORTH>\n            <NET_DATE></NET_DATE>\n            <SOURCE_OF_WEALTH>01</SOURCE_OF_WEALTH>\n            <SOURCE_OF_WEALTH_OTH></SOURCE_OF_WEALTH_OTH>\n            <KRA_ADDR_TYPE>1</KRA_ADDR_TYPE>\n            <OCCUPATION>01</OCCUPATION>\n            <OCCUPATION_OTH></OCCUPATION_OTH>\n            <PEP>NA</PEP>\n            <ANY_OTH_INFO></ANY_OTH_INFO>\n        </OTHER_DETAIL>\n        <FATCA_DETAIL>\n          <BIRTH_CITY>Mumbai</BIRTH_CITY>\n          <BIRTH_COUNTRY>101</BIRTH_COUNTRY>\n          <BIRTH_COUNTRY_OTH></BIRTH_COUNTRY_OTH>\n          <CITIZENSHIP>101</CITIZENSHIP>\n          <CITIZENSHIP_OTH></CITIZENSHIP_OTH>\n          <NATIONALITY>101</NATIONALITY>\n          <NATIONALITY_OTH></NATIONALITY_OTH>\n          <TAX_RES_FLAG>N</TAX_RES_FLAG>\n          <TAXS_RECORDS>\n            <!--Multiple Record-->\n            <TAX_RECORD>\n              <SEQ_NUM></SEQ_NUM>\n              <TAX_COUNTRY></TAX_COUNTRY>\n              <TAX_COUNTRY_OTH></TAX_COUNTRY_OTH>\n              <TAX_REF_NO></TAX_REF_NO>\n              <IDENTI_TYPE></IDENTI_TYPE>\n              <IDENTI_TYPE_OTH></IDENTI_TYPE_OTH>\n            </TAX_RECORD>\n          </TAXS_RECORDS>\n        </FATCA_DETAIL>\n      </HOLDER_RECORD>\n    </HOLDER_RECORDS>\n    <ARN_DETAILS>\n      <!--  RIA Code need to add -->\n      <ARN_NO></ARN_NO>\n      <RIA_CODE></RIA_CODE>\n      <!-- RIA Code -->\n      <EUIN_CODE></EUIN_CODE>\n    </ARN_DETAILS>\n    <BANK_DETAILS>\n      <!--Multiple Record-->\n      <BANK_RECORD>\n        <SEQ_NUM>1</SEQ_NUM>\n        <DEFAULT_ACC_FLAG>Y</DEFAULT_ACC_FLAG>\n        <ACCOUNT_NO>1234656789</ACCOUNT_NO>\n        <ACCOUNT_TYPE>SB</ACCOUNT_TYPE>\n        <BANK_ID>065</BANK_ID>\n        <MICR_CODE>400065002</MICR_CODE>\n        <IFSC_CODE>ABHY0065002</IFSC_CODE>\n        <PROOF>14</PROOF>\n      </BANK_RECORD>\n    </BANK_DETAILS>\n    <NOMINEE_DETAILS>\n      <NOM_DECL_LVL>C</NOM_DECL_LVL>\n      <NOMIN_OPT_FLAG>N</NOMIN_OPT_FLAG>\n      <NOM_VERIFY_TYPE>E</NOM_VERIFY_TYPE>\n      <NOMINEES_RECORDS>\n      </NOMINEES_RECORDS>\n    </NOMINEE_DETAILS>\n  </REQ_BODY>\n  </CANIndFillEezzReq>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://14.141.212.169:4091/MFUCanFillEezzService",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"MFUCanFillEezzService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CC Test",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<CANIndFillEezzReq\n\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"CANIndFillEezzReq.xsd\">\n\t<REQ_HEADER>\n\t\t<ENTITY_ID>40007K</ENTITY_ID>\n\t\t<UNIQUE_ID>2</UNIQUE_ID>\n\t\t<REQUEST_TYPE>CANINDREG</REQUEST_TYPE>\n\t\t<LOG_USER_ID>EASYINVUAT</LOG_USER_ID>\n\t\t<EN_ENCR_PASSWORD>T7BO43drYUA0WrCASXo75g==</EN_ENCR_PASSWORD>\n\t\t<VERSION_NO>1.00</VERSION_NO>\n\t\t<TIMESTAMP>2023-01-10T11:15:30</TIMESTAMP>\n\t</REQ_HEADER>\n\t<REQ_BODY>\n\t\t<REQ_EVENT>CR</REQ_EVENT>\n\t\t<!-- CR - CAN CREATION EVENT , CM  CAN Modification Event-->\n\t\t<CAN></CAN>\n\t\t<!--  Only for CAN Modification -->\n\t\t<REG_TYPE>E</REG_TYPE>\n\t\t<!--  Physical,Electronic (P,E) -->\n\t\t<PROOF_UPLOAD_BY_CAN>N</PROOF_UPLOAD_BY_CAN>\n\t\t<!--  Y-YES ,N - NO -->\n\t\t<ENABLE_ONLINE_ACCESS_FLAG>Y</ENABLE_ONLINE_ACCESS_FLAG>\n\t\t<!--  Y-YES ,N - NO -->\n\t\t<ENTITY_EMAIL_DETAILS>\n\t\t\t<EMAIL_ID>a@gmail.com</EMAIL_ID>\n\t\t\t<EMAIL_ID></EMAIL_ID>\n\t\t</ENTITY_EMAIL_DETAILS>\n\t\t<HOLDING_TYPE>SI</HOLDING_TYPE>\n\t\t<INV_CATEGORY>I</INV_CATEGORY>\n\t\t<TAX_STATUS>NNI</TAX_STATUS>\n\t\t<HOLDER_COUNT>1</HOLDER_COUNT>\n\t\t<HOLDER_RECORDS>\n\t\t\t<HOLDER_RECORD>\n\t\t\t\t<HOLDER_TYPE>PR</HOLDER_TYPE>\n\t\t\t\t<!-- PR,SE,TH,GU -->\n\t\t\t\t<NAME>Test A</NAME>\n\t\t\t\t<DOB>2000-03-14</DOB>\n\t\t\t\t<PAN_EXEMPT_FLAG>N</PAN_EXEMPT_FLAG>\n\t\t\t\t<PAN_PEKRN_NO>APVPY5197E</PAN_PEKRN_NO>\n\t\t\t\t<AADHAAR_NO></AADHAAR_NO>\n\t\t\t\t<!-- As of version 5.5 of eCAN specification, this should be blank always. -->\n\t\t\t\t<RELATIONSHIP></RELATIONSHIP>\n\t\t\t\t<!-- Applicable only for Gaurdian Holder -->\n\t\t\t\t<REL_PROOF></REL_PROOF>\n\t\t\t\t<!-- Applicable only for Gaurdian Holder -->\n\t\t\t\t<CONTACT_DETAIL>\n\t\t\t\t\t<RES_ISD>91</RES_ISD>\n\t\t\t\t\t<RES_STD></RES_STD>\n\t\t\t\t\t<RES_PHONE_NO></RES_PHONE_NO>\n\t\t\t\t\t<MOB_ISD_CODE>91</MOB_ISD_CODE>\n\t\t\t\t\t<PRI_MOB_NO>1234567891</PRI_MOB_NO>\n\t\t\t\t\t<PRI_MOB_BELONGSTO>S</PRI_MOB_BELONGSTO>\n\t\t\t\t\t<!--  S-SELF,F-FAMILY -->\n\t\t\t\t\t<ALT_MOB_NO></ALT_MOB_NO>\n\t\t\t\t\t<OFF_ISD>91</OFF_ISD>\n\t\t\t\t\t<OFF_STD></OFF_STD>\n\t\t\t\t\t<OFF_PHONE_NO></OFF_PHONE_NO>\n\t\t\t\t\t<PRI_EMAIL>a@gmail.com</PRI_EMAIL>\n\t\t\t\t\t<PRI_EMAIL_BELONGSTO>S</PRI_EMAIL_BELONGSTO>\n\t\t\t\t\t<!--  S-SELF,F-FAMILY -->\n\t\t\t\t\t<ALT_EMAIL></ALT_EMAIL>\n\t\t\t\t</CONTACT_DETAIL>\n\t\t\t\t<OTHER_DETAIL>\n\t\t\t\t\t<GROSS_INCOME>01</GROSS_INCOME>\n\t\t\t\t\t<NET_WORTH></NET_WORTH>\n\t\t\t\t\t<NET_DATE></NET_DATE>\n\t\t\t\t\t<SOURCE_OF_WEALTH>01</SOURCE_OF_WEALTH>\n\t\t\t\t\t<SOURCE_OF_WEALTH_OTH></SOURCE_OF_WEALTH_OTH>\n\t\t\t\t\t<KRA_ADDR_TYPE>1</KRA_ADDR_TYPE>\n\t\t\t\t\t<OCCUPATION>01</OCCUPATION>\n\t\t\t\t\t<OCCUPATION_OTH></OCCUPATION_OTH>\n\t\t\t\t\t<PEP>PEP</PEP>\n\t\t\t\t\t<ANY_OTH_INFO>Any</ANY_OTH_INFO>\n\t\t\t\t</OTHER_DETAIL>\n\t\t\t\t<FATCA_DETAIL>\n\t\t\t\t\t<BIRTH_CITY>Mumbai</BIRTH_CITY>\n\t\t\t\t\t<BIRTH_COUNTRY>1</BIRTH_COUNTRY>\n\t\t\t\t\t<BIRTH_COUNTRY_OTH></BIRTH_COUNTRY_OTH>\n\t\t\t\t\t<CITIZENSHIP>1</CITIZENSHIP>\n\t\t\t\t\t<CITIZENSHIP_OTH></CITIZENSHIP_OTH>\n\t\t\t\t\t<NATIONALITY>1</NATIONALITY>\n\t\t\t\t\t<NATIONALITY_OTH></NATIONALITY_OTH>\n\t\t\t\t\t<TAX_RES_FLAG>N</TAX_RES_FLAG>\n\t\t\t\t\t<TAXS_RECORDS>\n\t\t\t\t\t\t<!--Multiple Record-->\n\t\t\t\t\t\t<TAX_RECORD>\n\t\t\t\t\t\t\t<SEQ_NUM></SEQ_NUM>\n\t\t\t\t\t\t\t<TAX_COUNTRY></TAX_COUNTRY>\n\t\t\t\t\t\t\t<TAX_COUNTRY_OTH></TAX_COUNTRY_OTH>\n\t\t\t\t\t\t\t<TAX_REF_NO></TAX_REF_NO>\n\t\t\t\t\t\t\t<IDENTI_TYPE></IDENTI_TYPE>\n\t\t\t\t\t\t\t<IDENTI_TYPE_OTH></IDENTI_TYPE_OTH>\n\t\t\t\t\t\t</TAX_RECORD>\n\t\t\t\t\t</TAXS_RECORDS>\n\t\t\t\t</FATCA_DETAIL>\n\t\t\t</HOLDER_RECORD>\n\t\t</HOLDER_RECORDS>\n\t\t<ARN_DETAILS>\n\t\t\t<!--  RIA Code need to add -->\n\t\t\t<ARN_NO></ARN_NO>\n\t\t\t<RIA_CODE></RIA_CODE>\n\t\t\t<!-- RIA Code -->\n\t\t\t<EUIN_CODE></EUIN_CODE>\n\t\t</ARN_DETAILS>\n\t\t<BANK_DETAILS>\n\t\t\t<!--Multiple Record-->\n\t\t\t<BANK_RECORD>\n\t\t\t\t<SEQ_NUM>1</SEQ_NUM>\n\t\t\t\t<DEFAULT_ACC_FLAG>Y</DEFAULT_ACC_FLAG>\n\t\t\t\t<ACCOUNT_NO>1234546464646</ACCOUNT_NO>\n\t\t\t\t<ACCOUNT_TYPE>SNRA</ACCOUNT_TYPE>\n\t\t\t\t<BANK_ID>001</BANK_ID>\n\t\t\t\t<MICR_CODE>123456787</MICR_CODE>\n\t\t\t\t<IFSC_CODE>RBIS0CBIVER</IFSC_CODE>\n\t\t\t\t<PROOF>14</PROOF>\n\t\t\t</BANK_RECORD>\n\t\t</BANK_DETAILS>\n\t\t<NOMINEE_DETAILS>\n\t\t\t<NOM_DECL_LVL>C</NOM_DECL_LVL>\n\t\t\t<NOMIN_OPT_FLAG>N</NOMIN_OPT_FLAG>\n\t\t\t<NOM_VERIFY_TYPE>P</NOM_VERIFY_TYPE>\n\t\t\t<NOMINEES_RECORDS></NOMINEES_RECORDS>\n\t\t</NOMINEE_DETAILS>\n\t</REQ_BODY>\n</CANIndFillEezzReq>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://14.141.212.169:4091/MFUCanFillEezzService",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"MFUCanFillEezzService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CM Test",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n              <CANIndFillEezzReq xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"CANIndFillEezzReq.xsd\">\n                <REQ_HEADER>\n                  <ENTITY_ID>40007K</ENTITY_ID>\n                  <UNIQUE_ID>2</UNIQUE_ID>\n                  <REQUEST_TYPE>CANINDREG</REQUEST_TYPE>\n                  <LOG_USER_ID>EASYINVUAT</LOG_USER_ID>\n                  <EN_ENCR_PASSWORD>T7BO43drYUA0WrCASXo75g==</EN_ENCR_PASSWORD>\n                  <VERSION_NO>1.00</VERSION_NO>\n                  <TIMESTAMP>2023-01-10T11:15:30</TIMESTAMP>\n                </REQ_HEADER>\n                <REQ_BODY>\n                  <REQ_EVENT>CM</REQ_EVENT>\n                  <!-- CR - CAN CREATION EVENT , CM  CAN Modification Event-->\n                  <CAN>31079KM001</CAN>\n                  <!--  Only for CAN Modification -->\n                  <REG_TYPE>E</REG_TYPE>\n                  <!--  Physical,Electronic (P,E) -->\n                  <PROOF_UPLOAD_BY_CAN>N</PROOF_UPLOAD_BY_CAN>\n                  <!--  Y-YES ,N - NO -->\n                  <ENABLE_ONLINE_ACCESS_FLAG>Y</ENABLE_ONLINE_ACCESS_FLAG>\n                  <!--  Y-YES ,N - NO -->\n                  <ENTITY_EMAIL_DETAILS>\n                      <EMAIL_ID>a@gmail.com</EMAIL_ID>\n                      <EMAIL_ID></EMAIL_ID>\n                  </ENTITY_EMAIL_DETAILS>\n                  <HOLDING_TYPE>SI</HOLDING_TYPE>\n                  <INV_CATEGORY>I</INV_CATEGORY>\n                  <TAX_STATUS>NNI</TAX_STATUS>\n                  <HOLDER_COUNT>1</HOLDER_COUNT>\n                  <HOLDER_RECORDS>\n                      <HOLDER_RECORD>\n                <HOLDER_TYPE>PR</HOLDER_TYPE>\n                    <!-- PR,SE,TH,GU -->\n                    <NAME>Test A</NAME>\n                    <DOB>2000-03-14</DOB>\n                    <PAN_EXEMPT_FLAG>N</PAN_EXEMPT_FLAG>\n                    <PAN_PEKRN_NO>APVPY5197E</PAN_PEKRN_NO>\n                    <AADHAAR_NO></AADHAAR_NO>\n                    <!-- As of version 5.5 of eCAN specification, this should be blank always. -->\n                    <RELATIONSHIP></RELATIONSHIP>\n                    <!-- Applicable only for Gaurdian Holder -->\n                    <REL_PROOF></REL_PROOF>\n                    <!-- Applicable only for Gaurdian Holder -->\n                    <CONTACT_DETAIL>\n                        <RES_ISD>91</RES_ISD>\n                        <RES_STD></RES_STD>\n                        <RES_PHONE_NO></RES_PHONE_NO>\n                        <MOB_ISD_CODE>91</MOB_ISD_CODE>\n                        <PRI_MOB_NO>1234567891</PRI_MOB_NO>\n                        <PRI_MOB_BELONGSTO>S</PRI_MOB_BELONGSTO> <!--  S-SELF,F-FAMILY -->\n                        <ALT_MOB_NO></ALT_MOB_NO>\n                        <OFF_ISD>91</OFF_ISD>\n                        <OFF_STD></OFF_STD>\n                        <OFF_PHONE_NO></OFF_PHONE_NO>\n                        <PRI_EMAIL>a@gmail.com</PRI_EMAIL>\n                        <PRI_EMAIL_BELONGSTO>S</PRI_EMAIL_BELONGSTO> <!--  S-SELF,F-FAMILY -->\n                        <ALT_EMAIL></ALT_EMAIL>\n                    </CONTACT_DETAIL>\n                    <OTHER_DETAIL>\n                                <GROSS_INCOME>01</GROSS_INCOME>\n                                <NET_WORTH></NET_WORTH>\n                                <NET_DATE></NET_DATE>\n                                <SOURCE_OF_WEALTH>01</SOURCE_OF_WEALTH>\n                                <SOURCE_OF_WEALTH_OTH></SOURCE_OF_WEALTH_OTH>\n                                <KRA_ADDR_TYPE>1</KRA_ADDR_TYPE>\n                                <OCCUPATION>01</OCCUPATION>\n                                <OCCUPATION_OTH></OCCUPATION_OTH>\n                                <PEP>PEP</PEP>\n                                <ANY_OTH_INFO>Any</ANY_OTH_INFO>\n                            </OTHER_DETAIL>\n                    <FATCA_DETAIL>\n                    <BIRTH_CITY>Mumbai</BIRTH_CITY>\n                    <BIRTH_COUNTRY>001</BIRTH_COUNTRY>\n                    <BIRTH_COUNTRY_OTH></BIRTH_COUNTRY_OTH>\n                    <CITIZENSHIP>001</CITIZENSHIP>\n                    <CITIZENSHIP_OTH></CITIZENSHIP_OTH>\n                    <NATIONALITY>001</NATIONALITY>\n                    <NATIONALITY_OTH></NATIONALITY_OTH>\n                    <TAX_RES_FLAG>N</TAX_RES_FLAG>\n                    <TAXS_RECORDS>\n                        <!--Multiple Record-->\n                        <TAX_RECORD>\n                            <SEQ_NUM></SEQ_NUM>\n                            <TAX_COUNTRY></TAX_COUNTRY>\n                            <TAX_COUNTRY_OTH></TAX_COUNTRY_OTH>\n                            <TAX_REF_NO></TAX_REF_NO>\n                            <IDENTI_TYPE></IDENTI_TYPE>\n                            <IDENTI_TYPE_OTH></IDENTI_TYPE_OTH>\n                        </TAX_RECORD>\n                    </TAXS_RECORDS>\n                    </FATCA_DETAIL>\n                </HOLDER_RECORD>\n                  </HOLDER_RECORDS>\n                  <ARN_DETAILS>\n                  <!--  RIA Code need to add -->\n                  <ARN_NO></ARN_NO>\n                  <RIA_CODE></RIA_CODE>\n                  <!-- RIA Code -->\n                  <EUIN_CODE></EUIN_CODE>\n                  </ARN_DETAILS>\n                  <BANK_DETAILS>\n                  <!--Multiple Record-->\n                      <BANK_RECORD>\n                <SEQ_NUM>1</SEQ_NUM>\n                <DEFAULT_ACC_FLAG>Y</DEFAULT_ACC_FLAG>\n                <ACCOUNT_NO>1234546464646</ACCOUNT_NO>\n                <ACCOUNT_TYPE>SNRA</ACCOUNT_TYPE>\n                <BANK_ID>001</BANK_ID>\n                <MICR_CODE>123456787</MICR_CODE>\n                <IFSC_CODE>RBIS0CBIVER</IFSC_CODE>\n                <PROOF>14</PROOF>\n            </BANK_RECORD>\n                  </BANK_DETAILS>\n                  <NOMINEE_DETAILS>\n                      <NOM_DECL_LVL>C</NOM_DECL_LVL>\n                      <NOMIN_OPT_FLAG>Y</NOMIN_OPT_FLAG>\n                      <NOM_VERIFY_TYPE>P</NOM_VERIFY_TYPE>\n                      <NOMINEES_RECORDS>\n                          <NOMINEE_RECORD>\n                <SEQ_NUM>1</SEQ_NUM>\n                <NOMINEE_NAME>Adinath Mehtar</NOMINEE_NAME>\n                <RELATION>Brother</RELATION>\n                <PERCENTAGE>10</PERCENTAGE>\n                <DOB>2000-03-19</DOB>\n                \n                <NOM_GURI_NAME></NOM_GURI_NAME>\n                <NOM_GURI_REL></NOM_GURI_REL>\n                <NOM_GURI_DOB></NOM_GURI_DOB>\n            </NOMINEE_RECORD>\n                      </NOMINEES_RECORDS>\n                  </NOMINEE_DETAILS>\n                </REQ_BODY>\n              </CANIndFillEezzReq>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://14.141.212.169:4091/MFUCanFillEezzService",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"MFUCanFillEezzService"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://14.141.212.169:4091/SwitchAndStpTxnAction.do?sendResponseFormat=JSON&sessioncontext=22347400001EBF884E&sendersubid=22347400001&logTp=A&versionNo=2.0&txnType=S&orderMode=Z&tranSource=E&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://14.141.212.169:4091/SwitchAndStpTxnAction.do?sendResponseFormat=JSON&sessioncontext=22347400001EBF884E&sendersubid=22347400001&logTp=A&versionNo=2.0&txnType=S&orderMode=Z&tranSource=E&actionType=CHECK&folioTxnFlag=N&txnEvent=Q&pageForRole=INV&can=14157AZA01&jointHolderFlag=N&holderDetail&directFlag=Y&arnType=&arnCode=&subBrkArnLabel=&subBrkArnType=&subBrkArnCode=&subBrokCode=&euincode=&depositoryFlag=N&dpType=&invDpAccNo=&noOfSchemes=1&recordNo=1&extUniqueRefId=123451&folioAccNo=18314548&folioCheckDigit=&rtaAmcCode=FTI&srcSchemeCode=414&tarSchemeCode=453&dividendOption=R&txnVolumeType=U&txnVolume=10&euinDeclaration=N",
+							"protocol": "https",
+							"host": [
+								"14",
+								"141",
+								"212",
+								"169"
+							],
+							"port": "4091",
+							"path": [
+								"SwitchAndStpTxnAction.do"
+							],
+							"query": [
+								{
+									"key": "sendResponseFormat",
+									"value": "JSON"
+								},
+								{
+									"key": "sessioncontext",
+									"value": "22347400001EBF884E"
+								},
+								{
+									"key": "sendersubid",
+									"value": "22347400001"
+								},
+								{
+									"key": "logTp",
+									"value": "A"
+								},
+								{
+									"key": "versionNo",
+									"value": "2.0"
+								},
+								{
+									"key": "txnType",
+									"value": "S"
+								},
+								{
+									"key": "orderMode",
+									"value": "Z"
+								},
+								{
+									"key": "tranSource",
+									"value": "E"
+								},
+								{
+									"key": "actionType",
+									"value": "CHECK"
+								},
+								{
+									"key": "folioTxnFlag",
+									"value": "N"
+								},
+								{
+									"key": "txnEvent",
+									"value": "Q"
+								},
+								{
+									"key": "pageForRole",
+									"value": "INV"
+								},
+								{
+									"key": "can",
+									"value": "14157AZA01"
+								},
+								{
+									"key": "jointHolderFlag",
+									"value": "N"
+								},
+								{
+									"key": "holderDetail",
+									"value": null
+								},
+								{
+									"key": "directFlag",
+									"value": "Y"
+								},
+								{
+									"key": "arnType",
+									"value": ""
+								},
+								{
+									"key": "arnCode",
+									"value": ""
+								},
+								{
+									"key": "subBrkArnLabel",
+									"value": ""
+								},
+								{
+									"key": "subBrkArnType",
+									"value": ""
+								},
+								{
+									"key": "subBrkArnCode",
+									"value": ""
+								},
+								{
+									"key": "subBrokCode",
+									"value": ""
+								},
+								{
+									"key": "euincode",
+									"value": ""
+								},
+								{
+									"key": "depositoryFlag",
+									"value": "N"
+								},
+								{
+									"key": "dpType",
+									"value": ""
+								},
+								{
+									"key": "invDpAccNo",
+									"value": ""
+								},
+								{
+									"key": "noOfSchemes",
+									"value": "1"
+								},
+								{
+									"key": "recordNo",
+									"value": "1"
+								},
+								{
+									"key": "extUniqueRefId",
+									"value": "123451"
+								},
+								{
+									"key": "folioAccNo",
+									"value": "18314548"
+								},
+								{
+									"key": "folioCheckDigit",
+									"value": ""
+								},
+								{
+									"key": "rtaAmcCode",
+									"value": "FTI"
+								},
+								{
+									"key": "srcSchemeCode",
+									"value": "414"
+								},
+								{
+									"key": "tarSchemeCode",
+									"value": "453"
+								},
+								{
+									"key": "dividendOption",
+									"value": "R"
+								},
+								{
+									"key": "txnVolumeType",
+									"value": "U"
+								},
+								{
+									"key": "txnVolume",
+									"value": "10"
+								},
+								{
+									"key": "euinDeclaration",
+									"value": "N"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payeezz validation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bse",
+			"item": [
+				{
+					"name": "get password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/soap+xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\"\nxmlns:bses=\"http://bsestarmf.in/\">\n\t<soap:Header xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\n\t\t<wsa:Action>http://bsestarmf.in/MFOrderEntry/getPassword</wsa:Action>\n\t\t<wsa:To>https://bsestarmfdemo.bseindia.com/MFOrderEntry/MFOrder.svc/Secure</wsa:To>\n\t</soap:Header>\n\t<soap:Body>\n\t\t<bses:getPassword>\n\t\t\t<bses:UserId>5505601</bses:UserId>\n\t\t\t<bses:Password>Easy@12</bses:Password>\n\t\t\t<bses:PassKey>0123456789</bses:PassKey>\n\t\t</bses:getPassword>\n\t</soap:Body>\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bsestarmfdemo.bseindia.com/MFOrderEntry/MFOrder.svc/Secure",
+							"protocol": "https",
+							"host": [
+								"bsestarmfdemo",
+								"bseindia",
+								"com"
+							],
+							"path": [
+								"MFOrderEntry",
+								"MFOrder.svc",
+								"Secure"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lumpsum purchase",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/soap+xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:bses=\"http://bsestarmf.in/\">\n        <soap:Header xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\n            <wsa:Action>http://bsestarmf.in/MFOrderEntry/orderEntryParam</wsa:Action>\n            <wsa:To>https://bsestarmfdemo.bseindia.com/MFOrderEntry/MFOrder.svc/Secure</wsa:To>\n        </soap:Header>\n        <soap:Body>\n            <bses:orderEntryParam>\n                <bses:TransCode>NEW</bses:TransCode>\n                <bses:TransNo>2022021810234000311</bses:TransNo>\n                <bses:OrderId></bses:OrderId>\n                <bses:UserID>5505601</bses:UserID>\n                <bses:MemberId>55056</bses:MemberId>\n                <bses:ClientCode>123456</bses:ClientCode>\n                <bses:SchemeCd>02-DP</bses:SchemeCd>\n                <bses:BuySell>P</bses:BuySell>\n                <bses:BuySellType>FRESH</bses:BuySellType>\n                <bses:DPTxn>P</bses:DPTxn>\n                <bses:OrderVal>500</bses:OrderVal>\n                <bses:Qty/>\n                <bses:AllRedeem>N</bses:AllRedeem>\n                <bses:FolioNo/>\n                <bses:Remarks/>\n                <bses:KYCStatus>Y</bses:KYCStatus>\n                <bses:RefNo/>\n                <bses:SubBrCode/>\n                <bses:EUIN/>\n                <bses:EUINVal>N</bses:EUINVal>\n                <bses:MinRedeem>N</bses:MinRedeem>\n                <bses:DPC>Y</bses:DPC>\n                <bses:IPAdd/>\n                <bses:Password>5RHTI6MkByWBjXSY4mntpBTxyA5mqkGRqVjxkC+ndyqEGT8U6tng//uUays3WX/d</bses:Password>\n                <bses:PassKey>0123456789</bses:PassKey>\n                <bses:Parma1/>\n                <bses:Param2/>\n                <bses:Param3/>\n                <bses:MobileNo/>\n                <bses:EmailID/>\n                <bses:MandateID/>\n                <bses:Filler1/>\n                <bses:Filler2/>\n                <bses:Filler3/>\n                <bses:Filler4/>\n                <bses:Filler5/>\n                <bses:Filler6/>\n            </bses:orderEntryParam>\n        </soap:Body>\n    </soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bsestarmfdemo.bseindia.com/MFOrderEntry/MFOrder.svc/Secure",
+							"protocol": "https",
+							"host": [
+								"bsestarmfdemo",
+								"bseindia",
+								"com"
+							],
+							"path": [
+								"MFOrderEntry",
+								"MFOrder.svc",
+								"Secure"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lumpsump redemtion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/soap+xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:bses=\"http://bsestarmf.in/\">\n        <soap:Header xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\n            <wsa:Action>http://bsestarmf.in/MFOrderEntry/orderEntryParam</wsa:Action>\n            <wsa:To>https://bsestarmfdemo.bseindia.com/MFOrderEntry/MFOrder.svc/Secure</wsa:To>\n        </soap:Header>\n        <soap:Body>\n            <bses:orderEntryParam>\n                <bses:TransCode>NEW</bses:TransCode>\n                <bses:TransNo>2022021810234000051</bses:TransNo>\n                <bses:OrderId/>\n                <bses:UserID>5505601</bses:UserID>\n                <bses:MemberId>55056</bses:MemberId>\n                <bses:ClientCode>123456</bses:ClientCode>\n                <bses:SchemeCd>02-DP</bses:SchemeCd>\n                <bses:BuySell>R</bses:BuySell>\n                <bses:BuySellType>FRESH</bses:BuySellType>\n                <bses:DPTxn>P</bses:DPTxn>\n                <bses:OrderVal>500</bses:OrderVal>\n                <bses:Qty/>\n                <bses:AllRedeem>N</bses:AllRedeem>\n                <bses:FolioNo>123456</bses:FolioNo>\n                <bses:Remarks/>\n                <bses:KYCStatus>Y</bses:KYCStatus>\n                <bses:RefNo/>\n                <bses:SubBrCode/>\n                <bses:EUIN/>\n                <bses:EUINVal>N</bses:EUINVal>\n                <bses:MinRedeem>N</bses:MinRedeem>\n                <bses:DPC>Y</bses:DPC>\n                <bses:IPAdd/>\n                <bses:Password>5RHTI6MkByWBjXSY4mntpBTxyA5mqkGRp99hi5Ic9yt+wlyPblTVewkwfM8Hs7cy</bses:Password>\n                <bses:PassKey>0123456789</bses:PassKey>\n                <bses:Parma1/>\n                <bses:Param2/>\n                <bses:Param3>20006531447</bses:Param3>\n                <bses:MobileNo/>\n                <bses:EmailID/>\n                <bses:MandateID/>\n                <bses:Filler1/>\n                <bses:Filler2/>\n                <bses:Filler3/>\n                <bses:Filler4/>\n                <bses:Filler5/>\n                <bses:Filler6/>\n            </bses:orderEntryParam>\n        </soap:Body>\n    </soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bsestarmfdemo.bseindia.com/MFOrderEntry/MFOrder.svc/Secure",
+							"protocol": "https",
+							"host": [
+								"bsestarmfdemo",
+								"bseindia",
+								"com"
+							],
+							"path": [
+								"MFOrderEntry",
+								"MFOrder.svc",
+								"Secure"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sip order entry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/soap+xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:bses=\"http://bsestarmf.in/\">\n    <soap:Header xmlns:wsa=\"http://www.w3.org/2005/08/addressing\">\n        <wsa:Action>http://bsestarmf.in/MFOrderEntry/sipOrderEntryParam</wsa:Action>\n        <wsa:To>https://bsestarmfdemo.bseindia.com/MFOrderEntry/MFOrder.svc/Secure</wsa:To>\n    </soap:Header>\n    <soap:Body>\n        <bses:sipOrderEntryParam>\n            <bses:TransactionCode>NEW</bses:TransactionCode>\n            <bses:UniqueRefNo>2022021810234000023</bses:UniqueRefNo>\n            <bses:SchemeCode>02-DP</bses:SchemeCode>\n            <bses:MemberCode>55056</bses:MemberCode>\n            <bses:ClientCode>123456</bses:ClientCode>\n            <bses:UserID>5505601</bses:UserID>\n            <bses:InternalRefNo></bses:InternalRefNo>\n            <bses:TransMode>D</bses:TransMode>\n            <bses:DpTxnMode>N</bses:DpTxnMode>\n            <bses:StartDate>29/09/2022</bses:StartDate>\n            <bses:FrequencyType>WEEKLY</bses:FrequencyType>\n            <bses:FrequencyAllowed>1</bses:FrequencyAllowed>\n            <bses:InstallmentAmount>10</bses:InstallmentAmount>\n            <bses:NoOfInstallment>6</bses:NoOfInstallment>\n            <bses:Remarks></bses:Remarks>\n            <bses:FolioNo></bses:FolioNo>\n            <bses:FirstOrderFlag>Y</bses:FirstOrderFlag>\n            <bses:SubberCode></bses:SubberCode>\n            <bses:Euin>E123456</bses:Euin>\n            <bses:EuinVal>Y</bses:EuinVal>\n            <bses:DPC>N</bses:DPC>\n            <bses:RegId></bses:RegId>\n            <bses:IPAdd></bses:IPAdd>\n            <bses:Password>5RHTI6MkByWBjXSY4mntpBTxyA5mqkGRqT955mQ2wApWmEw2HeVG6faIcOmG1eOA</bses:Password>\n            <bses:PassKey>0123456789</bses:PassKey>\n            <bses:Param1></bses:Param1>\n            <bses:Param2></bses:Param2>\n            <bses:Param3></bses:Param3>\n            <bses:Filler1></bses:Filler1>\n            <bses:Filler2></bses:Filler2>\n            <bses:Filler3></bses:Filler3>\n            <bses:Filler4></bses:Filler4>\n            <bses:Filler5></bses:Filler5>\n            <bses:Filler6></bses:Filler6>\n        </bses:sipOrderEntryParam>\n    </soap:Body>\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bsestarmfdemo.bseindia.com/MFOrderEntry/MFOrder.svc/Secure",
+							"protocol": "https",
+							"host": [
+								"bsestarmfdemo",
+								"bseindia",
+								"com"
+							],
+							"path": [
+								"MFOrderEntry",
+								"MFOrder.svc",
+								"Secure"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/soap+xml",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"UserId\": \"1000001\",\n    \"MemberCode\": \"10000\",\n    \"Password\": \"@123456\",\n    \"RegnType\": \"NEW\",\n    \"Param\": \"T0001|FirstName||LastName|01|M|01/01/1970|01|SI|||||||||||||N||||AFEPK2130F||||||||P||||||||SB|11415||HDFC0000001|Y|||||||||||||||||||||FirstName LastName|01|ADD 1|ADD 2|ADD 3|MUMBAI|MA|400001|INDIA|22721233||||test@test.com|P||||||||||||9999999999|||||||||||||||||||K||||||||||||N||P|||||\",\n    \"Filler1\": \"\",\n    \"Filler2\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://bsestarmfdemo.bseindia.com/StarMFCommonAPI/ClientMaster/Registration",
+							"protocol": "https",
+							"host": [
+								"bsestarmfdemo",
+								"bseindia",
+								"com"
+							],
+							"path": [
+								"StarMFCommonAPI",
+								"ClientMaster",
+								"Registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aof",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Flag\":\"UCC\",\n    \"UserId\" : \"123\",\n    \"EncryptedPassword\": \"sfgdfdfgsdfsd\",\n    \"MemberCode\": \"123\",\n    \"ClientCode\":\"ABC\",\n    \"FileName\":\"abc.tiff\",\n    \"DocumentType\":\"\",\n    \"pFileBytes\":\"\",\n    \"Filler1\":\"Null\",\n    \"Filler2\":\"NULL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "internal",
+			"item": [
+				{
+					"name": "registration1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"acc_type\": \"3\",\n    \"pan_no\": \"CAFPG0201C\",\n    \"name\": \"dipen\",\n    \"email\": \"dipen@gmail.com\",\n    \"mobile\": \"1234567890\",\n    \"username\": \"dipen\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/registration1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"registration1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registration2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : \"2\",\n    \"client_code\" : \"0000\",\n    \"investor_category\" : \"1\",\n    \"tax_status\" : \"5\",\n    \"holding_nature\" : \"3\",\n    \"primary_holder_name\" : \"dipen\",\n    \"primary_holder_dob\" : \"1998-11-11\",\n    \"status\" : \"\",\n    \"gender\" : \"M\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/registration2",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"registration2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HDFC bank PAN verification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "nmNhnsOTFsmCTRvsWyzKUsSs%2B1FR1CmERuvB9KqnRdkJ1rkLd%2F75kbvhjm8pUQ2S5HbqiWSTit5Hk0MrDLquTTtICYoX9QSZ2tVKKbeKo05oRuXEzTl6pYwHr8QO9y6jvP0%2BL9aOWftfuoZzQ2gDsPqXfa3LXWRvM%2BeH3exdbpEeUzTAwv2kv%2FcmFnubfEymBRAOdWI%2BpKmBA%2BGslu6bbV9XHgbpmn3dsnz2ov3j05py3fuITWl6zRMTxElPc1a%2Bd%2FKRdw94ryU0v5wNessNeSU0vT6pK0PBElSUl8hWSsZQRtF0f04khang5VT7SSyD6ykcc3OVBTgnLIHMIzWmXSBOSSTeQFt22Ha9tyfsEjMki31fjo4S00ctdJQboPDHGJ%2BqFZKs5z8q9tCvi5hr2Y3xz6zliJAwiGEK%2FO3spRds7oAx8bdJj%2FcSEoGMXT25F70QBvSEJzAps%2BWek8VBK4GAyvObejqGW%2F6ugujjVzyTXGZggi9aVWVVcc0m5ohy",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"request\": \"onZi13z4RQNfGSAMjz1D9fuxNUk8lCoCOZD1XO6uoh1JuaXAxUcbRm3e5RiJewJNwk9OhPzqgaaJFhy%2FLaum%2B3XBKuq%2FVmZ8DvyBvoxxW33s6Tx5lYmVUI1wvszzSFQp3Xdgn6Q%2F5zwS4cnUYes6\",\n    \"key\": \"b%2Bgx3DWIUOE7xZ1Sk2qznLVsYzpmuk2kyeuxoI4Ao2HLNVJPvdp0eGEMTDFUZWT5mp%2FdLPGjp0KsunnOZdIP7ujpHiNXBE%2F8yvwp743sSc8d4Op3y7u8CDbhWL5jlc5V7c8K1V0OzSkrrooDYhA7kK7itopYe7fE21RHnW77CjQzyaUfHSaEnU1M2Hc09xvPcK0HMbmZNzgtxY10i509rCG%2F7HjddzLKEqiHaKNas2jUWONAlJH%2F4jNNXYBywTl0%2BcCDEkFtyywKpzZIxwEiS6E%2Ftlb5JIupsdXIJJwpQP2e89iJ2mQ2DhLEQPjM7sfTKCbqlTrti28c6ob6zKdQAv7zVFeqo0gR0le3SwPoMsMbNaXkzGPn1vz0hzRS7YCVmGXj85KMWPiV1ZVdlH%2FdPLR7tw1qvQvtFFtPzoxLHHd3IAWjAFmGCs2JHG939rlTz7cr5%2FXGwJbQhPtwDlB6MoiSBRqc017iHqs9kY9g9rFNZ%2BtBMQm9EYorvMnpTB4j\",\n    \"checksum\": \"80F46F65C185E13F7FAE50F9A8A3469D828AE865A244673CF7A5C8F23F177944\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://uat-api.hdfcfund.com/api-gateway/partner/v1/newInvestor/verifyKyc",
+							"protocol": "https",
+							"host": [
+								"uat-api",
+								"hdfcfund",
+								"com"
+							],
+							"path": [
+								"api-gateway",
+								"partner",
+								"v1",
+								"newInvestor",
+								"verifyKyc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pan_scan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pan_img",
+									"type": "file",
+									"src": "/H:/Dynamic-Vishva/mfu-docs/new/pan_images/vivek_pan1.jpeg"
+								},
+								{
+									"key": "pan_no",
+									"value": "3213wqdsda",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "43.204.0.1:9003/scan_pan",
+							"host": [
+								"43",
+								"204",
+								"0",
+								"1"
+							],
+							"port": "9003",
+							"path": [
+								"scan_pan"
+							],
+							"query": [
+								{
+									"key": "pan_img",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
